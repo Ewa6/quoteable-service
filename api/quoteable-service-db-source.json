@@ -1,7 +1,7 @@
 {  
   "subscribers": [
     {
-      "userId": "1",
+      "id": 1,
 	  "lastName": "Stark",
       "firstName": "Tony",
       "email": "t.stark@example.com",
@@ -15,7 +15,7 @@
     },
     
       {
-        "userId": "2",
+        "id": 2,
 		"lastName": "Rogers",
         "firstName": "Stephen",
         "email": "s.rogers@example.com",
@@ -31,7 +31,7 @@
     
     {
       
-        "userId": "3",
+        "id": 3,
 		"lastName": "Odinson",
         "firstName": "Thor",
         "email": "t.odinson@example.com",
@@ -47,7 +47,7 @@
     
     {
       
-        "userId": "4",
+        "id": 4,
 		"lastName": "Romanov",
         "firstName": "Natasha",
         "email": "n.romanov@example.com",
@@ -63,8 +63,8 @@
   ],
     "quotes": [
   {
-      "userId": "1",
-      "quoteId": "3",
+      "subscriberId": 1,
+      "id": 3,
       "quoteDate" :"2018-03-20T22:00", 
 	    "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. – Anne Wilson Schaef",	  
       "loveQuoteText": "",
@@ -75,8 +75,8 @@
       "shareQuoteContact": "pepper.pots@stark.com"     
   },
   {
-      "userId": "2",
-      "quoteId": "1",
+      "subscriberId": 2,
+      "id": 1,
       "quoteDate" :"2012-01-01T03:00",
 	    "healthQuoteText": "",	  
       "loveQuoteText": "When we lose someone we love, we must learn not to live without them, but to live with the love they left behind. - Unknown",
@@ -88,8 +88,8 @@
       
     },
 	{
-      "userId": "3",
-      "quoteId": "5",
+      "subscriberId": 3,
+      "id": 5,
       "quoteDate" :"2017-02-14T09:00",
 	    "healthQuoteText": "",	  
       "loveQuoteText": "There is a little boy inside the man who is my brother… Oh, how I hated that little boy. And how I love him too. — Anna Quindlen",
@@ -101,8 +101,8 @@
       
     },
 	{
-      "userId": "4",
-      "quoteId": "2",
+      "subscriberId": 4,
+      "id": 2,
       "quoteDate" :"2014-04-14T12:00",
 	 	  "healthQuoteText": "Be bold, be brave enough to be your true self. - Queen Latifah",	  
       "loveQuoteText": "Because, if you could love someone, and keep loving them, without being loved back . . . then that love had to be real. It hurt too much to be anything else. ― Sarah Cross",
