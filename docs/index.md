@@ -45,6 +45,10 @@ Explore the detailed API reference to understand the available resources and how
 
 ### `subscribers` resource
 
+See the [`subscribers' resource overview](api/subscribers.md) for detailed information about the resource.
+
+See these chapters for the API reference on the most useful CRUD actions:
+
 * **GET**: Retrieve a list of subscribers.
 * **POST**: Create a new subscriber.
 * **PUT**: Update subscriber information.
