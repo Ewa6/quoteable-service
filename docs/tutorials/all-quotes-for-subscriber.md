@@ -12,7 +12,7 @@ This tutorial demonstrates how to retrieve a subscriber along with their quotes 
 
 Before you start this tutorial:
 
-- [ ] Ensure you have access to the Quotable API.
+- [x] Ensure you have access to the Quotable API.
 - [ ] Ensure you have a tool like Postman or cURL installed to make API requests.
 - [ ] Have the `subscriberId` for which you want to retrieve the quotes.
 
