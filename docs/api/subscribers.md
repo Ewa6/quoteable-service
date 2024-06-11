@@ -4,12 +4,18 @@ layout: page
 
 # `subscribers` resource
 
-The `subscribers` resource allows you to manage subscriber information in the Quoteable API. It allows you to:
+With the `subscribers` resource you can manage subscriber information in the Quoteable API. It allows you to:
 
 * Retrieve subscriber details.
 * Create new subscribers.
 * Update subscriber information.
 * Remove subscribers
+
+## Base endpoint
+
+```shell
+{server_url}/subscribers
+```
 
 ## Resource properties
 
@@ -55,7 +61,7 @@ Add a new subscriber
 
 ### Read (GET)
 
-Get all subscribers
+[Get all subscribers](subscribers-get-all-subscribers.md)
 Get a subscriber by ID
 Get a subsciber by last name
 
