@@ -18,7 +18,9 @@ None
 
 ## Request headers
 
-None
+```shell
+Content-Type: application/json
+```
 
 ## Request body
 

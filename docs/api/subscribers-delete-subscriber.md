@@ -2,7 +2,7 @@
 layout: page
 ---
 
-# Delete a subsciber
+# Delete a subscriber
 
 This endpoint provides a simple way to remove subscribers from the Quotable API when they are no longer needed or when they request to be deleted from the system.
 
@@ -30,7 +30,7 @@ Upon successful deletion of the subscriber, the API will return a `204 No Conten
 HTTP/1.1 204 No Content
 ```
 
-Note that when you delete a subscruber, all associated quotes for that subscriber are also deleted. This ensures data consistency and prevents orphaned quotes from remaining in the system.
+Note that when you delete a subscriber, all associated quotes for that subscriber are also deleted. This ensures data consistency and prevents orphaned quotes from remaining in the system.
 
 If you attempt to remove a subscriber that does not exist, the API will return a `404 Not Found` status code.
 
@@ -42,7 +42,9 @@ If you attempt to remove a subscriber that does not exist, the API will return a
 
 ## Request headers
 
-None
+```shell
+Content-Type: application/json
+```
 
 ## Request body
 

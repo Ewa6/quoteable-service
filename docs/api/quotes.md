@@ -40,10 +40,10 @@ Sample `quotes` resource
 | ------------- | ----------- | ----------- |     :----:    |
 | `subscriberId` | number | The subscriber's unique ID. | :white_check_mark: |
 | `id` | number | The unique ID of the quote. | :white_check_mark: |
-| `quoteDate` | string | The date when the subsciber gets the quote(s). It's in the following date and time format: `YYYY-MM-DDTHH:mm` | :white_check_mark: |
+| `quoteDate` | string (ISO 8601 format) | The date when the subsciber gets the quote(s). It's in the following date and time format: `YYYY-MM-DDTHH:mm` | :white_check_mark: |
 | `healthQuoteText` | string | The text of the quote from the **Health** category.  | :x: |
 | `loveQuoteText` | string | The text of the quote from the  **Love** category.| :x: |
-| `helpPplQuoteText` | strong | The text of the quote from the **Helping People** category. | :x: |
+| `helpPplQuoteText` | string | The text of the quote from the **Helping People** category. | :x: |
 | `customQuote` | Boolean | Indicates whether the subscriber wants to add a custom quote. | :white_check_mark:  |
 | `customQuoteText` | string | A custom quote text. | :x: |
 | `shareQuote` | Boolean | Indicates whether the subscriber wants to share the quote. | :white_check_mark: |
