@@ -62,15 +62,21 @@ Add a new subscriber
 ### Read (GET)
 
 [Get all subscribers](subscribers-get-all-subscribers.md)
+
 Get a subscriber by ID
+
 Get a subsciber by last name
 
 ### Update (PUT/PATCH)
 
 Update a subscriber by ID
+
 Update a subscriber's email or mobile
+
 Update a subscriber's quotes preference
+
 Update a subscriber's delivery method
+
 Update a subscriber's frequency preferences
 
 ### Delete (DELETE)

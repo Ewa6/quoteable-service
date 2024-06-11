@@ -53,8 +53,6 @@ Sample `quotes` resource
 
 See API reference below to see which CRUD actions supports the `quotes` resource.
 
-(links to topics will be added)
-
 ### Create (POST)
 
 Add a new quote for a subscriber
