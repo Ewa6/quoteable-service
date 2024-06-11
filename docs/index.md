@@ -52,7 +52,7 @@ See these chapters for the API reference on the most useful CRUD actions:
 * **GET**: [Retrieve a list of subscribers](api/subscribers-get-all-subscribers.md)
 * **POST**: [Create a new subscriber](api/subscribers-add-subscriber.md)
 * **PUT**: Update subscriber information
-* **DELETE**: Delete a subscriber
+* **DELETE**: [Delete a subscriber](api/subscribers-delete-subscriber.md)
 
 ### `quotes` resource
 
