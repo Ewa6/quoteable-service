@@ -61,7 +61,6 @@ Response body:
     {
       "subscriberId": 1,
       "id": 3,
-      "quoteDate": "2018-03-20T22:00",
       "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. – Anne Wilson Schaef",
       "loveQuoteText": "",
       "helpPplQuoteText": "At the end, it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It's about what you've given back. – Denzel Washington",

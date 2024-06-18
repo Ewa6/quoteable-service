@@ -30,7 +30,7 @@ Upon successful deletion of the subscriber, the API will return a `204 No Conten
 HTTP/1.1 204 No Content
 ```
 
-Note that when you delete a subscruber, all associated quotes for that subscriber are also deleted. This ensures data consistency and prevents orphaned quotes from remaining in the system.
+Note that when you delete a subscriber, all associated quotes for that subscriber are also deleted. This ensures data consistency and prevents orphaned quotes from remaining in the system.
 
 If you attempt to remove a subscriber that does not exist, the API will return a `404 Not Found` status code.
 

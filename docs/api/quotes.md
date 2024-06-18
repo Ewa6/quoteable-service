@@ -4,7 +4,7 @@ layout: page
 
 # `quotes` resource
 
-With the `quotes` resource you can manage and retrieve quotes associated with subscribers in the Quoteable API. It allows you to:
+With the `quotes` resource you can manage and retrieve quotes associated with subscribers in the Quoteable Service. It allows you to:
 
 * Retrieve quotes.
 * Add new quotes.
@@ -25,7 +25,6 @@ Sample `quotes` resource
     {
         "subscriberId": 1,
         "id": 3,
-        "quoteDate": "2018-03-20T22:00",
         "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. – Anne Wilson Schaef",
         "loveQuoteText": "",
         "helpPplQuoteText": "At the end, it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It’s about what you've given back. – Denzel Washington",
@@ -40,9 +39,8 @@ Sample `quotes` resource
 | ------------- | ----------- | ----------- |     :----:    |
 | `subscriberId` | number | The subscriber's unique ID. | :white_check_mark: |
 | `id` | number | The unique ID of the quote. | :white_check_mark: |
-| `quoteDate` | string (ISO 8601 format) | The date when the subsciber gets the quote(s). It's in the following date and time format: `YYYY-MM-DDTHH:mm` | :white_check_mark: |
 | `healthQuoteText` | string | The text of the quote from the **Health** category.  | :x: |
-| `loveQuoteText` | string | The text of the quote from the  **Love** category.| :x: |
+| `loveQuoteText` | string | The text of the quote from the  **Love** category. It's the default category. | :white_check_mark: |
 | `helpPplQuoteText` | string | The text of the quote from the **Helping People** category. | :x: |
 | `customQuote` | Boolean | Indicates whether the subscriber wants to add a custom quote. | :white_check_mark:  |
 | `customQuoteText` | string | A custom quote text. | :x: |
@@ -60,13 +58,17 @@ Add a new quote for a subscriber
 ### Read (GET)
 
 Get all quotes
+
 Get a quote by ID
+
 Get quotes by date
 
 ### Update (PUT/PATCH)
 
 Update a quote
+
 Add a custom quote for a subscriber
+
 Update a contact person for sharing a quote
 
 ### Delete (DELETE)

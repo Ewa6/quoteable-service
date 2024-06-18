@@ -29,7 +29,6 @@ This is the structure and fields of the JSON object that should be sent in the r
 ``` js
 {
   "subscriberId": integer,
-  "quoteDate": string (ISO 8601 format),
   "healthQuoteText": string,
   "loveQuoteText": string,
   "helpPplQuoteText": string,
@@ -47,7 +46,6 @@ This is an example of a JSON object that can be sent in the request body when ad
 ``` js
 {
   "subscriberId": 2,
-  "quoteDate": "2023-06-11T09:00",
   "healthQuoteText": "",
   "loveQuoteText": "Love is not about possession. Love is about appreciation. – Osho",
   "helpPplQuoteText": "",
@@ -66,7 +64,6 @@ This is the structure and fields of the JSON object that will be returned in the
 {
   "subscriberId": integer,
   "id": integer,
-  "quoteDate": string (ISO 8601 format),
   "healthQuoteText": string,
   "loveQuoteText": string,
   "helpPplQuoteText": string,
@@ -85,7 +82,6 @@ Once a new quote has been created, this is the example response body you get:
 {
   "subscriberId": 2,
   "id": 6,
-  "quoteDate": "2023-06-11T09:00",
   "healthQuoteText": "",
   "loveQuoteText": "Love is not about possession. Love is about appreciation. – Osho",
   "helpPplQuoteText": "",

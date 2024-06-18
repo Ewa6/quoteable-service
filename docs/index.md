@@ -2,21 +2,21 @@
 layout: page
 ---
 
-# Quoteable API
+# Quoteable Service
 
-Welcome to the Quoteable API! This API allows you to store and retrieve user data along with their favorite quotes.
-With Quateable API, you can create apps that give your users a daily dose of inspiration and vitamin Q!
+Welcome to the Quoteable Service! This API allows you to store and retrieve user data along with their favorite quotes.
+With Quoteable Service, you can create apps that give your users a daily dose of inspiration and vitamin Q!
 You can choose the quotes from three topic areas:
 
 * Love
 * Health
 * Helping Others
 
-The Quoteable API has two main resources: subscribers and quotes.
+The Quoteable Service has two main resources: `subscribers` and `quotes`.
 
 ## Use cases
 
-Use the Quoteable API to enrich your applications with a daily dose inspiration. Quoteable API is great for:
+Use the Quoteable Service to enrich your applications with a daily dose inspiration. Quoteable Service is great for:
 
 * **Motivational apps**: Deliver a new inspirational quote to users each day, tailored to their chosen topic areas.
 * **Personalized dashboards**: Integrate user-specific quotes into personalized dashboards or homepages.
@@ -25,19 +25,23 @@ Use the Quoteable API to enrich your applications with a daily dose inspiration.
 
 ## Features
 
-The Quateable API provides the following features:
+The Quoteable Service provides the following features:
 
 * Limit your quotes to specific topics or receive random quotes from all areas.
 * Choose a delivery schedule and the destination for daily pick-me-ups.
 * Add custom quotes that will be reviewed by our quote experts.
 * Share quotes via email or SMS.
 
-## Get started
+## Prepare your environment
 
-To get started with the Quoateable API, follow these setup guides depending on your operating system (links will be added):
+To get started with the Quoteable Service, follow these setup guides depending on your operating system (links will be added):
 
-* Windows
-* MAC
+* [Windows](tutorials/prepare-windows.md)
+* [MAC](tutorials/prepare-mac.md)
+
+## Quick Start Guide
+
+Once you have prepared your operating system, you can make your first API call to the Quoteable Service! Follow this [Quick Start Guide](tutorials/quick-start-guide.md) for detailed instructions.
 
 ## API Reference
 
@@ -89,7 +93,7 @@ Hours: Monday to Friday, 9 AM - 5 PM EST
 
 ### Feedback
 
-We value your feedback! If you have any suggestions or comments about the Quoteable API, let us know:
+We value your feedback! If you have any suggestions or comments about the Quoteable Service, let us know:
 
 * **Email**: <feedback@quoteableapi.com>
 
@@ -97,5 +101,5 @@ We value your feedback! If you have any suggestions or comments about the Quotea
 
 Stay connected with us on social media for the latest updates, news, and tips:
 
-* **Facebook**: Quoteable API
-* **LinkedIn**: Quoteable API
+* **Facebook**: Quoteable Service
+* **LinkedIn**: Quoteable Service
