@@ -4,7 +4,7 @@ layout: page
 
 # `subscribers` resource
 
-With the `subscribers` resource you can manage subscriber information in the Quoteable API. It allows you to:
+With the `subscribers` resource you can manage subscriber information in the Quoteable Service. It allows you to:
 
 * Retrieve subscriber details.
 * Create new subscribers.
@@ -42,12 +42,12 @@ Sample `subscribers` resource
 | `lastName` | string | The subscriber's last name. | :white_check_mark: |
 | `firstName` | string | The subscriber's first name.  | :white_check_mark: |
 | `email` | string | The subscriber's email address.| :white_check_mark: |
-| `mobile` | number | The subscriber's mobile phone number. | |
+| `mobile` | number | The subscriber's mobile phone number. | :x: |
 | `healthQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Health** category. By default, it's set to `True`. | :white_check_mark:  |
 | `loveQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Love** category.  | :white_check_mark: |
 | `helpPplQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Helping People** category.  | :white_check_mark:  |
 | `deliverTo` | integer | Indicates whether the user wants to get the quote by email or by text message. | :white_check_mark: |
-| `frequency` | integer | How often the suscriber wants to get a quote or quotes. | :white_check_mark: |
+| `frequency` | integer | How often the subscriber wants to get a quote or quotes. | :white_check_mark: |
 
 ## CRUD Operations
 
@@ -65,7 +65,7 @@ Add a new subscriber
 
 Get a subscriber by ID
 
-Get a subsciber by last name
+Get a subscriber by last name
 
 ### Update (PUT/PATCH)
 

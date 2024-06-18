@@ -1,6 +1,6 @@
 # Get all subscribers
 
-Returns an array of `subscribers` objects that contains all subscrubers that have registered to receive the quotes.
+Returns an array of `subscribers` objects that contains all subscribers that have registered to receive the quotes.
 
 ## URL
 
