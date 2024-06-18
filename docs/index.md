@@ -45,23 +45,31 @@ Explore the detailed API reference to understand the available resources and how
 
 ### `subscribers` resource
 
-* **GET**: Retrieve a list of subscribers.
-* **POST**: Create a new subscriber.
-* **PUT**: Update subscriber information.
-* **DELETE**: Delete a subscriber.
+See the [`subscribers' resource overview](api/subscribers.md) for detailed information about the resource.
+
+See these chapters for the API reference on the most useful CRUD actions:
+
+* **GET**: [Retrieve a list of subscribers](api/subscribers-get-all-subscribers.md)
+* **POST**: [Create a new subscriber](api/subscribers-add-subscriber.md)
+* **PUT**: [Update subscriber information](api/subscribers-update-subscriber.md)
+* **DELETE**: [Delete a subscriber](api/subscribers-delete-subscriber.md)
 
 ### `quotes` resource
 
-* **GET**: Retrieve a list of quotations.
-* **POST**: Add a new quotation.
-* **PUT**: Update a quotation.
-* **DELETE**: Delete a quotation.
+See the [`quotes' resource overview](api/quotes.md) for detailed information about the resource.
+
+See these chapters for the API reference on the most useful CRUD actions:
+
+* **GET**: Retrieve a list of quotations
+* **POST**: [Add a new quotation](api/quotes-add-quote.md)
+* **PUT**: Update a quotation
+* **DELETE**: Delete a quotation
 
 ## Tutorials
 
 Dive into our step-by-step tutorials to learn how to use the API effectively.
 
-(links will be added)
+[Retrieve all quotes for a subscriber](tutorials/all-quotes-for-subscriber.md)
 
 ## Error handling
 
