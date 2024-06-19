@@ -12,6 +12,45 @@ This endpoint allows you to add a new quote for a specific subscriber. You can p
 {POST}{base_url}/quotes/
 ```
 
+## Sample request
+
+To add a new quote for a subscriber with ID 2, send the following request:
+
+```shell
+POST {base_url}/quotes/
+Content-Type: application/json
+
+{
+  "subscriberId": 2,
+  "id": 6,
+  "healthQuoteText": "",
+  "loveQuoteText": "Love is not about possession. Love is about appreciation. – Osho",
+  "helpPplQuoteText": "",
+  "customQuote": false,
+  "customQuoteText": "",
+  "shareQuote": true,
+  "shareQuoteContact": "bucky.barnes@example.com"
+}
+```
+
+## Sample response
+
+Upon successful creation of the quote, the API will return a `201 Created` status code with the created quote object in the response body.
+
+```js
+{
+  "subscriberId": 2,
+  "id": 6,
+  "healthQuoteText": "",
+  "loveQuoteText": "Love is not about possession. Love is about appreciation. – Osho",
+  "helpPplQuoteText": "",
+  "customQuote": false,
+  "customQuoteText": "",
+  "shareQuote": true,
+  "shareQuoteContact": "bucky.barnes@example.com"
+}
+```
+
 ## Params
 
 None

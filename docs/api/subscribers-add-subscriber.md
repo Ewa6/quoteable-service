@@ -12,6 +12,46 @@ This endpoint allows you to create a new subscriber in the Quotable API. You can
 {POST}{base_url}/subscribers/
 ```
 
+## Sample request
+
+To create a new subscriber, send the following request:
+
+```shell
+POST {base_url}/subscribers/
+Content-Type: application/json
+
+{
+  "lastName": "Parker",
+  "firstName": "Peter",
+  "email": "p.parker@example.com",
+  "mobile": "5551234567",
+  "healthQuote": true,
+  "loveQuote": false,
+  "helpPplQuote": true,
+  "deliverTo": 1,
+  "frequency": 2
+}
+```
+
+## Sample response
+
+Upon successful creation of the subscriber, the API will return a `201 Created` status code with the created subscriber object in the response body.
+
+```js
+{
+  "id": 5,
+  "lastName": "Parker",
+  "firstName": "Peter",
+  "email": "p.parker@example.com",
+  "mobile": "5551234567",
+  "healthQuote": true,
+  "loveQuote": false,
+  "helpPplQuote": true,
+  "deliverTo": 1,
+  "frequency": 2
+}
+```
+
 ## Params
 
 None
