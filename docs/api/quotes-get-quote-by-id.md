@@ -4,7 +4,7 @@ layout: page
 
 # Get a quote by ID
 
-This endpoint allows you to retrieve a specific quote by its ID from the Quotable API. 
+This endpoint allows you to retrieve a specific quote by its ID from the Quotable API.
 
 You need to provide the `quoteId` in the URL path, and the API will return the corresponding quote object if it exist
 

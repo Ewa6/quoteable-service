@@ -53,32 +53,20 @@ Sample `subscribers` resource
 
 See API reference below to see which CRUD actions supports the `subscribers` resource.
 
-(links to topics will be added)
-
 ### Create (POST)
 
-Add a new subscriber
+[Add a new subscriber](subscrinbrs-add-subscriber.md)
 
 ### Read (GET)
 
 [Get all subscribers](subscribers-get-all-subscribers.md)
 
-Get a subscriber by ID
-
-Get a subscriber by last name
+[Get a subscriber by ID](subscribers-get-subscriber-by-id.md)
 
 ### Update (PUT/PATCH)
 
-Update a subscriber by ID
-
-Update a subscriber's email or mobile
-
-Update a subscriber's quotes preference
-
-Update a subscriber's delivery method
-
-Update a subscriber's frequency preferences
+[Update a subscriber by ID](subscribers-update-subscriber.md)
 
 ### Delete (DELETE)
 
-Delete a subscriber by ID
+[Delete a subscriber by ID](subscribers-delete-subscriber.md)

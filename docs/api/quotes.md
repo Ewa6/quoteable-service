@@ -65,8 +65,6 @@ See API reference below to see which CRUD actions supports the `quotes` resource
 
 [Update a quote](quotes-update-quote.md)
 
-[Add a custom quote for a subscriber](quotes-add-custom-quote.md)
-
 ### Delete (DELETE)
 
 [Delete a quote by ID](quotes-delete-quote-by-id.md)
