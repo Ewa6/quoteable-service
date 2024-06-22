@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Your Page Title
+title: Update a subscriber's quote preferences
 ---
 
-# Update a subscriber's email or mobile
+# Update a subscriber's quote preferences
 
-This tutorial demonstrates how to update a subscriber's email address or mobile number using the Quoteable API. This process is useful when subscribers need to change their contact information.
+This tutorial demonstrates how to update a subscriber's quote preferences using the Quoteable API. This process allows subscribers to change which types of quotes they want to receive.
 
 <div class="tutorial-duration">
   <div class="icon-container">
@@ -14,15 +14,15 @@ This tutorial demonstrates how to update a subscriber's email address or mobile 
       <polyline points="12 6 12 12 16 14"></polyline>
     </svg>
   </div>
-  <div class="duration-text"><strong>Expected duration:</strong> Expect this tutorial to take about 15 minutes to complete.</div>
+  <div class="duration-text"><strong>Expected duration:</strong> Expect this tutorial to take about 10 minutes to complete.</div>
 </div>
 
 ## Important notes
 
-- You can update either the email, mobile, or both in a single request.
-- If you only want to update one field, only include that field in your request body.
+- You can update any combination of quote preferences (health, love, helping others) in a single request.
+- If you only want to update one preference, only include that field in your request body.
 - The API will return the entire updated subscriber object, including fields you didn't modify.
-- Ensure that the new email address is valid and the new mobile number is in the correct format.
+- At least one quote preference should be set to true to ensure the subscriber receives quotes.
 
 ## Prerequisites
 
@@ -31,12 +31,12 @@ Before you start this tutorial:
 <ul class="checkbox-list" style="list-style-type: none;">
   <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
-  <li style="list-style-type: none;"><input type="checkbox"> Know the <code>id</code> of the subscriber you want to update.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Know the <code>id</code> of the subscriber whose preferences you want to update.</li>
 </ul>
 
-## Update subscriber information
+## Update subscriber's quote preferences
 
-To update a subscriber's email or mobile number, you need to send a `PUT` request to the `/subscribers/{id}` endpoint with the updated information.
+To update a subscriber's quote preferences, you need to send a `PUT` request to the `/subscribers/{id}` endpoint with the updated preference information.
 
 Follow these steps:
 
@@ -51,8 +51,9 @@ Follow these steps:
 
     ```json
     {
-      "email": "new.email@example.com",
-      "mobile": "9876543210"
+      "healthQuote": true,
+      "loveQuote": false,
+      "helpPplQuote": true
     }
     ```
 
@@ -64,13 +65,14 @@ The successful request should return a status code `200 OK` with the updated sub
 
 Request:
 
-```http
+```js
 PUT {{base_url}}/subscribers/1
 Content-Type: application/json
 
 {
-  "email": "tony.stark.new@example.com",
-  "mobile": "2125559999"
+  "healthQuote": true,
+  "loveQuote": false,
+  "helpPplQuote": true
 }
 ```
 
@@ -81,8 +83,8 @@ Response body:
   "id": 1,
   "lastName": "Stark",
   "firstName": "Tony",
-  "email": "tony.stark.new@example.com",
-  "mobile": "2125559999",
+  "email": "tony.stark@example.com",
+  "mobile": "2125551234",
   "healthQuote": true,
   "loveQuote": false,
   "helpPplQuote": true,
@@ -91,18 +93,18 @@ Response body:
 }
 ```
 
-## Error Handling
+## Error handling
 
 If you encounter errors, here are some common issues and their solutions:
 
 - `404 Not Found`: Check that you're using the correct subscriber id.
-- `400 Bad Request`: Ensure your JSON is correctly formatted and contains valid data.
+- `400 Bad Request`: Ensure your JSON is correctly formatted and contains valid boolean values.
 - `401 Unauthorized`: Verify that you're including the correct authentication headers.
 
-## What's Next?
+## What's next?
 
-Now that you've learned how to update a subscriber's contact information, you can:
+Now that you've learned how to update a subscriber's quote preferences, you can:
 
-- Update other subscriber details like name or quote preferences.
+- pdate other subscriber details like delivery method or frequency.
 - Retrieve the updated subscriber information to confirm changes.
-- Use this method to build a user profile update feature in your application.
+- Use this method to build a preference management feature in your application.
