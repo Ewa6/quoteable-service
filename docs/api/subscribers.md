@@ -43,9 +43,9 @@ Sample `subscribers` resource
 | `firstName` | string | The subscriber's first name.  | :white_check_mark: |
 | `email` | string | The subscriber's email address.| :white_check_mark: |
 | `mobile` | number | The subscriber's mobile phone number. | :x: |
-| `healthQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Health** category. By default, it's set to `True`. | :white_check_mark:  |
+| `healthQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Health** category. By default, it's set to `True`. | :x:  |
 | `loveQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Love** category.  | :white_check_mark: |
-| `helpPplQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Helping People** category.  | :white_check_mark:  |
+| `helpPplQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Helping People** category.  | :x:  |
 | `deliverTo` | integer | Indicates whether the user wants to get the quote by email or by text message. | :white_check_mark: |
 | `frequency` | integer | How often the subscriber wants to get a quote or quotes. | :white_check_mark: |
 
