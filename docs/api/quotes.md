@@ -38,15 +38,15 @@ Sample `quotes` resource
 
 | Property name | Type | Description | Mandatory |
 | ------------- | ----------- | ----------- |     :----:    |
-| `subscriberId` | number | The subscriber's unique ID. | :white_check_mark: |
-| `id` | number | The unique ID of the quote. | :white_check_mark: |
-| `healthQuoteText` | string | The text of the quote from the **Health** category.  | :x: |
-| `loveQuoteText` | string | The text of the quote from the  **Love** category. It's the default category. | :white_check_mark: |
-| `helpPplQuoteText` | string | The text of the quote from the **Helping People** category. | :x: |
-| `customQuote` | Boolean | Indicates whether the subscriber wants to add a custom quote. | :white_check_mark:  |
-| `customQuoteText` | string | A custom quote text. | :x: |
-| `shareQuote` | Boolean | Indicates whether the subscriber wants to share the quote. | :white_check_mark: |
-| `shareQuoteContact` | string | The email of a person to share the quote with. | :white_check_mark: |
+| `subscriberId` | number | The subscriber's unique ID. | ✅ |
+| `id` | number | The unique ID of the quote. | ✅ |
+| `healthQuoteText` | string | The text of the quote from the **Health** category.  | ❌ |
+| `loveQuoteText` | string | The text of the quote from the  **Love** category. It's the default category. | ✅ |
+| `helpPplQuoteText` | string | The text of the quote from the **Helping People** category. | ❌ |
+| `customQuote` | Boolean | Indicates whether the subscriber wants to add a custom quote. | ✅  |
+| `customQuoteText` | string | A custom quote text. | ❌ |
+| `shareQuote` | Boolean | Indicates whether the subscriber wants to share the quote. | ✅ |
+| `shareQuoteContact` | string | The email of a person to share the quote with. | ✅ |
 
 ## CRUD Operations
 
