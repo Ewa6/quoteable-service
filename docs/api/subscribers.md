@@ -43,9 +43,9 @@ Sample `subscribers` resource
 | `firstName` | string | The subscriber's first name.  | :white_check_mark: |
 | `email` | string | The subscriber's email address.| :white_check_mark: |
 | `mobile` | number | The subscriber's mobile phone number. | :x: |
-| `healthQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Health** category. By default, it's set to `True`. | :white_check_mark:  |
+| `healthQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Health** category. By default, it's set to `True`. | :x:  |
 | `loveQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Love** category.  | :white_check_mark: |
-| `helpPplQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Helping People** category.  | :white_check_mark:  |
+| `helpPplQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Helping People** category.  | :x:  |
 | `deliverTo` | integer | Indicates whether the user wants to get the quote by email or by text message. | :white_check_mark: |
 | `frequency` | integer | How often the subscriber wants to get a quote or quotes. | :white_check_mark: |
 
@@ -53,32 +53,20 @@ Sample `subscribers` resource
 
 See API reference below to see which CRUD actions supports the `subscribers` resource.
 
-(links to topics will be added)
-
 ### Create (POST)
 
-Add a new subscriber
+[Add a new subscriber](subscrinbrs-add-subscriber.md)
 
 ### Read (GET)
 
 [Get all subscribers](subscribers-get-all-subscribers.md)
 
-Get a subscriber by ID
-
-Get a subscriber by last name
+[Get a subscriber by ID](subscribers-get-subscriber-by-id.md)
 
 ### Update (PUT/PATCH)
 
-Update a subscriber by ID
-
-Update a subscriber's email or mobile
-
-Update a subscriber's quotes preference
-
-Update a subscriber's delivery method
-
-Update a subscriber's frequency preferences
+[Update a subscriber by ID](subscribers-update-subscriber.md)
 
 ### Delete (DELETE)
 
-Delete a subscriber by ID
+[Delete a subscriber by ID](subscribers-delete-subscriber.md)

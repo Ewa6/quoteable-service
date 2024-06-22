@@ -53,24 +53,18 @@ See API reference below to see which CRUD actions supports the `quotes` resource
 
 ### Create (POST)
 
-Add a new quote for a subscriber
+[Add a new quote for a subscriber](quotes-add-quote.md)
 
 ### Read (GET)
 
-Get all quotes
+[Get all quotes](quotes-get-all-quotes.md)
 
-Get a quote by ID
-
-Get quotes by date
+[Get a quote by ID](quotes-get-quote-by-id.md)
 
 ### Update (PUT/PATCH)
 
-Update a quote
-
-Add a custom quote for a subscriber
-
-Update a contact person for sharing a quote
+[Update a quote](quotes-update-quote.md)
 
 ### Delete (DELETE)
 
-Delete a quote by ID
+[Delete a quote by ID](quotes-delete-quote-by-id.md)

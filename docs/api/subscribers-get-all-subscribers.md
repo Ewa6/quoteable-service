@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Get all subscribers
 
 Returns an array of `subscribers` objects that contains all subscribers that have registered to receive the quotes.
@@ -5,7 +9,6 @@ Returns an array of `subscribers` objects that contains all subscribers that hav
 ## URL
 
 ```shell
-
 {server_url}/subscribers
 ```
 

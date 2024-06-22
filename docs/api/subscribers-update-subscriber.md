@@ -4,7 +4,7 @@ layout: page
 
 # Update a subscriber
 
-This endpoint allows you to update a subscriber's information in the Quotable API, providing flexibility to modify subscriber details as needed.
+This endpoint allows you to update a subscriber's information in the Quoteable API, providing flexibility to modify subscriber details as needed.
 
 You need to provide the subscriber's ID in the URL path and the updated subscriber details in the request body. The API will update the subscriber's information and return the updated subscriber object in the response.
 
@@ -16,23 +16,48 @@ You need to provide the subscriber's ID in the URL path and the updated subscrib
 
 ## Sample request
 
-To remove a subscriber with ID 5, you would send the following request:
+To update a subscriber with ID 5, you would send the following request:
 
 ```shell
-DELETE {base_url}/subscribers/5
+PUT {base_url}/subscribers/5
+Content-Type: application/json
+
+{
+  "lastName": "Parker",
+  "firstName": "Peter",
+  "email": "peter.parker@example.com",
+  "mobile": "5551234567",
+  "healthQuote": true,
+  "loveQuote": true,
+  "helpPplQuote": false,
+  "deliverTo": 2,
+  "frequency": 1
+}
 ```
 
 ## Sample response
 
-Upon successful deletion of the subscriber, the API will return a `204 No Content` status code with an empty response body.
+Upon successful update of the subscriber, the API will return a `200 OK` status code with the updated subscriber object in the response body.
 
-```text
-HTTP/1.1 204 No Content
+```js
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 5,
+  "lastName": "Parker",
+  "firstName": "Peter",
+  "email": "peter.parker@example.com",
+  "mobile": "5551234567",
+  "healthQuote": true,
+  "loveQuote": true,
+  "helpPplQuote": false,
+  "deliverTo": 2,
+  "frequency": 1
+}
 ```
 
-Note that when you delete a subscriber, all associated quotes for that subscriber are also deleted. This ensures data consistency and prevents orphaned quotes from remaining in the system.
-
-If you attempt to remove a subscriber that does not exist, the API will return a `404 Not Found` status code.
+If the subscriber with the specified ID does not exist, the API will return a `404 Not Found` status code.
 
 ## Params
 

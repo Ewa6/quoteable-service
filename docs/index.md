@@ -64,10 +64,10 @@ See the [`quotes' resource overview](api/quotes.md) for detailed information abo
 
 See these chapters for the API reference on the most useful CRUD actions:
 
-* **GET**: Retrieve a list of quotations
-* **POST**: [Add a new quotation](api/quotes-add-quote.md)
-* **PUT**: Update a quotation
-* **DELETE**: Delete a quotation
+* **GET**: [Retrieve a list of quotes](api/quotes-get-all-quotes.md)
+* **POST**: [Add a new quote](api/quotes-add-quote.md)
+* **PUT**: [Update a quote](api/quotes-update-quote.md)
+* **DELETE**: [Delete a quote](api/quotes-delete-quote-by-id.md)
 
 ## Tutorials
 
