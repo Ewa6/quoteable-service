@@ -1,6 +1,6 @@
 ---
 layout: default
-title: `subscribers` resource
+title: Your Page Title
 ---
 
 # `subscribers` resource

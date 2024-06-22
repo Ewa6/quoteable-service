@@ -22,7 +22,7 @@ This tutorial demonstrates how to create a new subscriber in the Quotable API an
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox" checked> Ensure you have access to the Quotable API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quotable API.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Familiarize yourself with the structure of <code>subscriber</code> and <code>quote</code> objects in the API.</li>
 </ul>

@@ -22,7 +22,7 @@ This tutorial demonstrates how to retrieve a subscriber along with their quotes 
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox" checked> Ensure you have access to the Quotable API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quotable API.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Have the <code>subscriberId</code> for which you want to retrieve the quotes.</li>
 </ul>
