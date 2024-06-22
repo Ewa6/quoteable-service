@@ -23,3 +23,29 @@ ul.checkbox-list {
     }
   }
 }
+
+.tutorial-duration {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 20px 0;
+  max-width: 100%;
+  
+  .icon-container {
+    background-color: #e0e0e0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .duration-text {
+    padding: 10px 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
