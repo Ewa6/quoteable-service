@@ -1,0 +1,14 @@
+- name: Get Subscriber
+  method: GET
+  endpoint: /subscribers/{id}
+  description: Retrieves a specific subscriber by their ID.
+
+- name: Create Subscriber
+  method: POST
+  endpoint: /subscribers
+  description: Creates a new subscriber.
+
+- name: Update Subscriber
+  method: PUT
+  endpoint: /subscribers/{id}
+  description: Updates an existing subscriber.

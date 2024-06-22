@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: default
+title: Your Page Title
 ---
 
 # Add a new subscriber

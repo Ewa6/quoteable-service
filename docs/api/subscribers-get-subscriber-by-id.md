@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: default
+title: Your Page Title
 ---
 
 # Get a subscriber by ID

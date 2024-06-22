@@ -1,0 +1,25 @@
+---
+# Front matter for Jekyll
+---
+
+@import "minima";
+
+// Your custom styles here
+
+ul.checkbox-list {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important; // This ensures no left margin
+  
+  li {
+    margin-bottom: 10px;
+    list-style-type: none !important;
+    display: flex; // This will align the checkbox and text
+    align-items: flex-start; // This aligns items to the top
+    
+    input[type="checkbox"] {
+      margin-right: 10px; // This adds some space between the checkbox and the text
+      margin-top: 3px; // This aligns the checkbox with the first line of text
+    }
+  }
+}
