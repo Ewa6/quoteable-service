@@ -5,7 +5,7 @@ title: Your Page Title
 
 # Update a quote
 
-This endpoint allows you to update an existing quote in the Quotable API.
+This endpoint allows you to update an existing quote in the Quoteable API.
 
 You can modify the quote's text, custom quote status, sharing preferences, and other properties. The API will update the quote and return the updated quote object in the response.
 

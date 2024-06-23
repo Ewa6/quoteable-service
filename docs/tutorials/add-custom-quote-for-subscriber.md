@@ -20,8 +20,7 @@ This tutorial demonstrates how to add a custom quote for a subscriber using the 
 ## Important notes
 
 - Adding a custom quote involves setting the `customQuote` field to `true` and providing the quote text in the `customQuoteText` field.
-- Custom quotes are subject to review before being added to the subscriber's rotation.
-- The `customQuote` and `customQuoteText` fields are part of the subscriber object.
+- Custom quotes are subject to review before we add them to the subscriber's rotation.
 - Adding a custom quote doesn't affect the subscriber's other quote preferences or delivery settings.
 
 ## Prerequisites
@@ -97,8 +96,8 @@ Response body:
 
 If you encounter errors, here are some common issues and their solutions:
 
-- `404 Not Found`: Check that you're using the correct subscriber id.
-- `400 Bad Request`: Ensure your JSON is correctly formatted and includes both customQuote and customQuoteText fields.
+- `404 Not Found`: Check that you're using the correct `subscriberId`.
+- `400 Bad Request`: Ensure your JSON is correctly formatted and includes both `customQuote` and `customQuoteText` fields.
 - `401 Unauthorized`: Verify that you're including the correct authentication headers.
 - `422 Unprocessable Entity`: This may occur if the custom quote text is empty or exceeds the maximum allowed length. Ensure the quote text is not empty and within the allowed character limit.
 

@@ -5,9 +5,9 @@ title: Your Page Title
 
 # Get a subscriber by ID
 
-This endpoint allows you to retrieve a specific subscriber by their ID from the Quotable API.
+This endpoint allows you to retrieve a specific subscriber by their ID from the Quoteable API.
 
-You need to provide the `subscriberId` in the URL path, and the API will return the corresponding quote object if it exist
+You need to provide the `subscriberId` in the URL path, and the API will return the corresponding quote object if it exist.
 
 ## URL
 

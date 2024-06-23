@@ -5,7 +5,7 @@ title: Your Page Title
 
 # Delete a subscriber
 
-This endpoint provides a simple way to remove subscribers from the Quotable API when they are no longer needed or when they request to be deleted from the system.
+This endpoint provides a simple way to remove subscribers from the Quoteable API when they are no longer needed or when they request to be deleted from the system.
 
 You need to provide the subscriber's ID in the URL path. The API will delete the subscriber and return a success status code if the deletion is successful.
 
@@ -17,7 +17,7 @@ You need to provide the subscriber's ID in the URL path. The API will delete the
 
 ## Sample request
 
-To remove a subscriber with ID 5, you would send the following request:
+To remove a subscriber with ID 5, send the following request:
 
 ```shell
 DELETE {base_url}/subscribers/5

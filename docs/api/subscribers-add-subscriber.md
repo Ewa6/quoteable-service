@@ -5,7 +5,9 @@ title: Your Page Title
 
 # Add a new subscriber
 
-This endpoint allows you to create a new subscriber in the Quotable API. You can provide the subscriber's details, including their name, email, mobile number, quote preferences, delivery method, and frequency. The API will create a new subscriber and return the created subscriber object in the response.
+This endpoint allows you to create a new subscriber in the Quoteable API. You can provide the subscriber's details, including their name, email, mobile number, quote preferences, delivery method, and frequency.
+
+The API will create a new subscriber and return the created subscriber object in the response.
 
 ## URL
 
@@ -36,7 +38,7 @@ Content-Type: application/json
 
 ## Sample response
 
-Upon successful creation of the subscriber, the API will return a `201 Created` status code with the created subscriber object in the response body.
+Upon a successful creation of the subscriber, the API will return a `201 Created` status code with the created subscriber object in the response body.
 
 ```js
 {
@@ -65,7 +67,7 @@ Content-Type: application/json
 
 ## Request body
 
-This is the structure and fields of the JSON object that should be sent in the request body when adding a new subscriber.
+This is the structure and fields of the JSON object that you should send in the request body when you add a new subscriber.
 
 ```js
 {
@@ -83,7 +85,7 @@ This is the structure and fields of the JSON object that should be sent in the r
 
 ## Sample request body
 
-This is an example of a JSON object that can be sent in the request body when adding a new subscriber.
+This is an example of a JSON object that you can send in the request body when you add a new subscriber.
 
 ```js
 {

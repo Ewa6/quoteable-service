@@ -45,7 +45,7 @@ Sample `subscribers` resource
 | `email` | string | The subscriber's email address.| ✅ |
 | `mobile` | number | The subscriber's mobile phone number. | ❌ |
 | `healthQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Health** category. By default, it's set to `True`. | ❌  |
-| `loveQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Love** category.  | ✅ |
+| `loveQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Love** category. This is the default category. | ✅ |
 | `helpPplQuote` | Boolean | Indicates whether the subscriber wants to get a quote from the **Helping People** category.  | ❌  |
 | `deliverTo` | integer | Indicates whether the user wants to get the quote by email or by text message. | ✅ |
 | `frequency` | integer | How often the subscriber wants to get a quote or quotes. | ✅ |
@@ -54,15 +54,15 @@ Sample `subscribers` resource
 
 See API reference below to see which CRUD actions supports the `subscribers` resource.
 
-### Create (POST)
-
-[Add a new subscriber](subscrinbrs-add-subscriber.md)
-
 ### Read (GET)
 
 [Get all subscribers](subscribers-get-all-subscribers.md)
 
 [Get a subscriber by ID](subscribers-get-subscriber-by-id.md)
+
+### Create (POST)
+
+[Add a new subscriber](subscribers-add-subscriber.md)
 
 ### Update (PUT/PATCH)
 

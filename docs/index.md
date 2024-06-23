@@ -35,18 +35,18 @@ The Quoteable Service provides the following features:
 
 ## Prepare your environment
 
-To get started with the Quoteable Service, follow these setup guides depending on your operating system (links will be added):
+To get started with the Quoteable Service, follow these setup guides depending on your operating system:
 
 * [Windows](tutorials/prepare-windows.md)
 * [MAC](tutorials/prepare-mac.md)
 
 ## Quick Start Guide
 
-Once you have prepared your operating system, you can make your first API call to the Quoteable Service! Follow this [Quick Start Guide](tutorials/quick-start-guide.md) for detailed instructions.
+Once you have prepared your operating system, make your first API call to the Quoteable Service! Follow this [Quick Start Guide](tutorials/quick-start-guide.md) for detailed instructions.
 
 ## API Reference
 
-Explore the detailed API reference to understand the available resources and how to interact with them (links will be added).
+Explore the detailed API reference to understand the available resources and how to interact with them.
 
 ### `subscribers` resource
 
@@ -72,7 +72,7 @@ See these chapters for the API reference on the most useful CRUD actions:
 
 ## Tutorials
 
-Dive into our step-by-step tutorials to learn how to use the API effectively.
+Dive into our step-by-step tutorials to learn how to use the API effectively:
 
 [Create a new subscriber and add their first quote](tutorials/create-subscriber-add-first-quote.md)
 
@@ -87,10 +87,6 @@ Dive into our step-by-step tutorials to learn how to use the API effectively.
 [Add a custom quote for a subscriber](tutorials/add-custom-quote-for-subscriber.md)
 
 [Implement basic error handling when using the API](tutorials/implement-error-handling.md)
-
-## Error handling
-
-Understand how the API handles errors and the meaning of different error codes (links will be added).
 
 ## Contact us
 

@@ -13,13 +13,13 @@ Before you send your first API test call, ensure your operating system is correc
 
 To prepare your operating system, follow these instructions:
 
-- Prepare your Windows system
-- Prepare your MAC
+- [Prepare your Windows system](prepare-windows.md)
+- [Prepare your MAC](prepare-mac.md)
 
 ## Step 1: Fork the Quoteable Service repository
 
 1. Visit the Quoteable Service GitHub repository: <https://github.com/Ewa6/quoteable-service>
-2. Click **Fork** and select **Create a new fork**. This creates the fork of the Quoteable service repository on your GitHub.
+2. Click **Fork** and select **Create a new fork**. This creates the fork of the Quoteable Service repository on your GitHub.
 
 ## Step 2: Clone the Quoteable Service repository
 
@@ -38,9 +38,8 @@ To start the JSON server in the directory of your cloned repository, follow thes
 1. Open a command prompt (cmd) on Windows or a terminal on your Mac.
 2. Navigate to the directory where you want to start the JSON server. This is the directory where you cloned the Quoteable Service repository. For example: `cd C:\path\to\your\directory`
 3. Start the JSON server:
-
-- on Windows: `start-server.bat`
-- on Mac: `sh start-server.sh`
+    - on Windows: `start-server.bat`
+    - on Mac: `sh start-server.sh`
 
 The JSON server runs at `http://localhost:3000`. You can test it by running this address in your web browser.
 
@@ -49,7 +48,7 @@ The JSON server runs at `http://localhost:3000`. You can test it by running this
 Now it's time to make your first API call to the Quoteable Service! To do so, follow these steps:
 
 1. Open Postman.
-2. Select the GET method and enter the address: `http://localhost:3000/subscribers`.
+2. Select the `GET` method and enter the address: `http://localhost:3000/subscribers`.
 3. Click **Send**. The status of the response should be `200 OK` and the response body should return all subscribers of the Quoteable Service.
 
 ![The first call to the Quoteable Service in Postman](../images/postman-first-call-to-quoteable-service.png)

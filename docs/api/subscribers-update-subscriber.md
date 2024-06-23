@@ -74,7 +74,7 @@ Content-Type: application/json
 
 ## Request body
 
-This is the structure and fields of the JSON object that should be sent in the request body when updating a subscriber.
+This is the structure and fields of the JSON object that you should in the request body when you update a subscriber.
 
 ```js
 {
@@ -92,7 +92,7 @@ This is the structure and fields of the JSON object that should be sent in the r
 
 ## Sample request body
 
-This is an example of a JSON object that can be sent in the request body when updating a subscriber.
+This is an example of a JSON object that you can send in the request body when you update a subscriber.
 
 ```js
 {
