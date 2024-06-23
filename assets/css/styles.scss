@@ -1,0 +1,61 @@
+---
+# Front matter for Jekyll
+---
+
+@import "minima";
+
+// Your custom styles here
+
+ul.checkbox-list {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important; // This ensures no left margin
+  
+  li {
+    margin-bottom: 10px;
+    list-style-type: none !important;
+    display: flex; // This will align the checkbox and text
+    align-items: flex-start; // This aligns items to the top
+    
+    input[type="checkbox"] {
+      margin-right: 10px; // This adds some space between the checkbox and the text
+      margin-top: 3px; // This aligns the checkbox with the first line of text
+    }
+  }
+}
+
+.tutorial-duration {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 20px 0;
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.important-notes {
+  display: flex;
+  background-color: #ffebee;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 20px 0;
+
+  svg {
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
+
+  h3 {
+    margin-top: 0;
+    color: #d32f2f;
+  }
+
+  ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+  }
+}

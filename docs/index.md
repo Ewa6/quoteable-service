@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: default
+title: Your Page Title
 ---
 
 # Quoteable Service
@@ -73,7 +74,19 @@ See these chapters for the API reference on the most useful CRUD actions:
 
 Dive into our step-by-step tutorials to learn how to use the API effectively.
 
+[Create a new subscriber and add their first quote](tutorials/create-subscriber-add-first-quote.md)
+
 [Retrieve all quotes for a subscriber](tutorials/all-quotes-for-subscriber.md)
+
+[Update a subscriber's email or mobile](tutorials/update-email-mobile.md)
+
+[Update a subscriber's quote preferences](tutorials/update-subscribers-quote-preferences.md)
+
+[Modify a subscriber's quote frequency](tutorials/modify-quote-frequency.md)
+
+[Add a custom quote for a subscriber](tutorials/add-custom-quote-for-subscriber.md)
+
+[Implement basic error handling when using the API](tutorials/implement-error-handling.md)
 
 ## Error handling
 
