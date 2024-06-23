@@ -23,7 +23,7 @@ With the `quotes` resource you can manage and retrieve quotes associated with su
 Sample `quotes` resource
 
 ```js
-    {
+{
         "subscriberId": 1,
         "id": 3,
         "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. – Anne Wilson Schaef",
@@ -52,15 +52,15 @@ Sample `quotes` resource
 
 See API reference below to see which CRUD actions supports the `quotes` resource.
 
-### Create (POST)
-
-[Add a new quote for a subscriber](quotes-add-quote.md)
-
 ### Read (GET)
 
 [Get all quotes](quotes-get-all-quotes.md)
 
 [Get a quote by ID](quotes-get-quote-by-id.md)
+
+### Create (POST)
+
+[Add a new quote for a subscriber](quotes-add-quote.md)
 
 ### Update (PUT/PATCH)
 

@@ -22,7 +22,7 @@ This tutorial demonstrates how to retrieve a subscriber along with their quotes 
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quotable API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Have the <code>subscriberId</code> for which you want to retrieve the quotes.</li>
 </ul>
@@ -36,7 +36,7 @@ To do so, follow these steps:
 1. Open your API testing tool (e.g., Postman).
 2. Create a new request with the following details:
     - METHOD: GET
-    - URL: `{{base_url}}/subscribers/{id}?_embed=quotes` (replace `{id}` with the actual subscriberId)
+    - URL: `{{base_url}}/subscribers/{id}?_embed=quotes` (replace `{id}` with the actual `subscriberId`)
     - Headers:
         - Content-Type: application/json
         - Add any required authentication headers (if applicable).
@@ -86,4 +86,4 @@ Response body:
 
 ## What's next?
 
-After completing this tutorial, you can explore other endpoints and parameters provided by the Quotable API to retrieve and manipulate data according to your application's requirements.
+After completing this tutorial, you can explore other endpoints and parameters provided by the Quoteable API to retrieve and manipulate data according to your application's requirements.

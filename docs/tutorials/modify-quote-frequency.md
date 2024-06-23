@@ -20,7 +20,7 @@ This tutorial demonstrates how to update a subscriber's quote frequency using th
 ## Important notes
 
 - The quote frequency is represented by the `frequency` field in the subscriber object.
-- `frequency` value of 1 represents daily delivery, 2 represents weekly delivery, and 3 represents monthly delivery.
+- `frequency` value of `1` represents daily delivery, `2` represents weekly delivery, and `3` represents monthly delivery.
 - Changing the frequency doesn't affect the subscriber's quote preferences or delivery method.
 - Ensure the frequency value is within the valid range (1-3).
 
@@ -94,9 +94,9 @@ Response body:
 If you encounter errors, here are some common issues and their solutions:
 
 - `404 Not Found`: Check that you're using the correct subscriber id.
-- `400 Bad Request`: Ensure your JSON is correctly formatted and the frequency value is 1, 2, or 3.
+- `400 Bad Request`: Ensure your JSON is correctly formatted and the frequency value is `1`, `2`, or `3`.
 - `401 Unauthorized`: Verify that you're including the correct authentication headers.
-- `422 Unprocessable Entity`: This may occur if the frequency value is outside the valid range. Ensure the frequency is set to 1 (daily), 2 (weekly), or 3 (monthly).
+- `422 Unprocessable Entity`: This may occur if the frequency value is outside the valid range. Ensure the frequency is set to `1` (daily), `2` (weekly), or `3` (monthly).
 
 ## What's next?
 

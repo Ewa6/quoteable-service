@@ -20,8 +20,6 @@ This tutorial demonstrates how to implement basic error handling when working wi
 ## Important notes
 
 - The Quoteable API uses standard HTTP status codes to indicate the success or failure of an API request.
-- Common error status codes include 400 (Bad Request), 401 (Unauthorized), 404 (Not Found), and 500 (Internal Server Error).
-- The API returns error messages in JSON format, providing more details about the error.
 - Implementing proper error handling improves the user experience and makes debugging easier.
 
 ## Prerequisites

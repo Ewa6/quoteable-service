@@ -3,9 +3,9 @@ layout: default
 title: Your Page Title
 ---
 
-# Delete a quote
+# Delete a quote by ID
 
-This endpoint allows you to remove a specific quote from the Quotable API when it is no longer needed or when it needs to be deleted from the system.
+This endpoint allows you to remove a specific quote from the Quoteable API when it is no longer needed or when it needs to be deleted from the system.
 
 You need to provide the quote's ID in the URL path. The API will delete the quote and return a success status code if the deletion is successful.
 
@@ -17,7 +17,7 @@ You need to provide the quote's ID in the URL path. The API will delete the quot
 
 ## Sample request
 
-To remove a quote with ID 3, you would send the following request:
+To remove a quote with ID 3, send the following request:
 
 ```shell
 DELETE {base_url}/quotes/3

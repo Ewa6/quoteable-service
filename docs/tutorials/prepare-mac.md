@@ -7,6 +7,13 @@ title: Your Page Title
 
 To start using the Quoteable Service on your Mac device, follow these steps to set up the necessary tools and environment:
 
+<ul class="checkbox-list" style="list-style-type: none;">
+  <li style="list-style-type: none;"><input type="checkbox"> Step 1: Install Node.js</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Step 2: Install the JSON Server</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Step 3: Install Postman</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Step 4: Install GitHub Desktop</li>
+</ul>
+
 ## Step 1: Install Node.js
 
 To install the newest version of Node.js, follow these steps:
@@ -18,7 +25,7 @@ To install the newest version of Node.js, follow these steps:
 
 ## Step 2: Install the JSON Server
 
-Use the JSON server to simulate a backend API for testing and development purposes. To install the JSON Server, follow these steps:
+Use the JSON server to simulate a back-end API for testing and development purposes. To install the JSON Server, follow these steps:
 
 1. Open the Terminal.
 2. Run the following command to install JSON Server globally:

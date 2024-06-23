@@ -64,7 +64,7 @@ Content-Type: application/json
 
 ## Request body
 
-This is the structure and fields of the JSON object that should be sent in the request body when adding a new quote.
+This is the structure and fields of the JSON object that you send in the request body when you add a new quote.
 
 ``` js
 {
@@ -81,7 +81,7 @@ This is the structure and fields of the JSON object that should be sent in the r
 
 ## Sample request body
 
-This is an example of a JSON object that can be sent in the request body when adding a new quote.
+This is an example of a JSON object that you can send in the request body when you add a new quote.
 
 ``` js
 {

@@ -5,7 +5,7 @@ title: Your Page Title
 
 # Create a new subscriber and add their first quote
 
-This tutorial demonstrates how to create a new subscriber in the Quotable API and then add their first quote. By following these steps, you'll learn how to use multiple endpoints to set up a new user in the system and provide them with their initial quote.
+This tutorial demonstrates how to create a new subscriber in the Quoteable API and then add their first quote. By following these steps, you'll learn how to use multiple endpoints to set up a new user in the system and provide them with their initial quote.
 
 <div class="tutorial-duration">
   <div class="icon-container">
@@ -22,7 +22,7 @@ This tutorial demonstrates how to create a new subscriber in the Quotable API an
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quotable API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Familiarize yourself with the structure of <code>subscriber</code> and <code>quote</code> objects in the API.</li>
 </ul>
@@ -85,11 +85,11 @@ Now that we have created a new subscriber, let's add their first quote using the
 
 2. Send the request.
 
-The successful request should return the status code 201 Created with the newly created quote object in the response body.
+The successful request should return the status code `201 Created` with the newly created quote object in the response body.
 
 ## Example
 
-Step 1 Response body (Create subscriber):
+Step 1: Response body (Create subscriber):
 
 ```json
 {
@@ -106,7 +106,7 @@ Step 1 Response body (Create subscriber):
 }
 ```
 
-Step 2 Response body (Add quote):
+Step 2: Response body (Add quote):
 
 ```json
 {
@@ -124,7 +124,7 @@ Step 2 Response body (Add quote):
 
 ## What's next?
 
-After completing this tutorial, you have successfully created a new subscriber and added their first quote. You can explore other endpoints and parameters provided by the Quotable API to retrieve, update, or delete subscribers and quotes according to your application's requirements.
+After completing this tutorial, you have successfully created a new subscriber and added their first quote. You can explore other endpoints and parameters provided by the Quoteable API to retrieve, update, or delete subscribers and quotes according to your application's requirements.
 
 Some next steps you might consider:
 
