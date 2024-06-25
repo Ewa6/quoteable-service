@@ -9,10 +9,14 @@ This endpoint allows you to remove a specific quote from the Quoteable API when 
 
 You need to provide the quote's ID in the URL path. The API will delete the quote and return a success status code if the deletion is successful.
 
+## Method
+
+DELETE
+
 ## URL
 
 ```shell
-{DELETE}{base_url}/quotes/{id}
+{base_url}/quotes/{id}
 ```
 
 ## Sample request

@@ -9,10 +9,14 @@ This endpoint allows you to retrieve a specific quote by its ID from the Quoteab
 
 You need to provide the `quoteId` in the URL path, and the API will return the corresponding quote object if it exist
 
+## Method
+
+GET
+
 ## URL
 
 ```shell
-{GET}{base_url}/quotes/{id}
+{base_url}/quotes/{id}
 ```
 
 ## Sample request

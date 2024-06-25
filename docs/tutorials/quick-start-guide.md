@@ -23,7 +23,7 @@ To prepare your operating system, follow these instructions:
 
 ## Step 2: Clone the Quoteable Service repository
 
-Once you have forked the repository, you can clone it and work with it on your Mac. To do so, follow these steps:
+Once you have forked the repository, you can clone it and work with it. To do so, follow these steps:
 
 1. Open GitHub Desktop.
 2. Sign in to your GitHub account.
@@ -57,6 +57,7 @@ Now it's time to make your first API call to the Quoteable Service! To do so, fo
 
 Now that you have a basic understanding of how to use the Quoteable Service, you can explore the API reference for the [`subscribers` resource](../api/subscribers.md) and [`quotes` resource](../api/quotes.md). These topics introduce more detailed information on each endpoint, including request and response formats, error handling, and additional parameters.
 
-If you need more examples and practice with the Quoteable Service, see our tutorials.
+
+<!-- If you need more examples and practice with the Quoteable Service, see our [tutorials] -->
 
 Feel free to reach out to our support team if you have any questions or need further assistance. Happy coding!

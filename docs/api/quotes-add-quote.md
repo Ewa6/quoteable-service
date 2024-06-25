@@ -7,10 +7,14 @@ title: Your Page Title
 
 This endpoint allows you to add a new quote for a specific subscriber. You can provide the subscriber's ID along with the quote details. The API will create a new quote associated with the specified subscriber and return the created quote object in the response.
 
+## Method
+
+POST
+
 ## URL
 
 ```shell
-{POST}{base_url}/quotes/
+{base_url}/quotes/
 ```
 
 ## Sample request

@@ -9,10 +9,14 @@ This endpoint allows you to create a new subscriber in the Quoteable API. You ca
 
 The API will create a new subscriber and return the created subscriber object in the response.
 
+## Method
+
+POST
+
 ## URL
 
 ```shell
-{POST}{base_url}/subscribers/
+{base_url}/subscribers/
 ```
 
 ## Sample request

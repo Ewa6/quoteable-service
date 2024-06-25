@@ -7,6 +7,10 @@ title: Your Page Title
 
 Returns an array of `subscribers` objects that contains all subscribers that have registered to receive the quotes.
 
+## Method
+
+GET
+
 ## URL
 
 ```shell
@@ -87,4 +91,4 @@ None
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
 | 200 | Success | Requested data returned successfully |
-|  ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
+| ECONNREFUSED | N/A | Service is offline. Start the service and try again. |

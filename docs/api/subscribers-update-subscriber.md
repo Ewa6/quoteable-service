@@ -9,10 +9,14 @@ This endpoint allows you to update a subscriber's information in the Quoteable A
 
 You need to provide the subscriber's ID in the URL path and the updated subscriber details in the request body. The API will update the subscriber's information and return the updated subscriber object in the response.
 
+## Method
+
+PUT
+
 ## URL
 
 ```shell
-{DELETE}{base_url}/subscribers/{id}
+{base_url}/subscribers/{id}
 ```
 
 ## Sample request
