@@ -9,10 +9,14 @@ This endpoint provides a simple way to remove subscribers from the Quoteable API
 
 You need to provide the subscriber's ID in the URL path. The API will delete the subscriber and return a success status code if the deletion is successful.
 
+## Method
+
+DELETE
+
 ## URL
 
 ```shell
-{DELETE}{base_url}/subscribers/{id}
+{base_url}/subscribers/{id}
 ```
 
 ## Sample request

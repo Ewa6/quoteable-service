@@ -9,10 +9,14 @@ This endpoint allows you to update an existing quote in the Quoteable API.
 
 You can modify the quote's text, custom quote status, sharing preferences, and other properties. The API will update the quote and return the updated quote object in the response.
 
+## Method
+
+PUT
+
 ## URL
 
 ```shell
-{PUT}{base_url}/quotes/{id}
+{base_url}/quotes/{id}
 ```
 
 ## Sample request

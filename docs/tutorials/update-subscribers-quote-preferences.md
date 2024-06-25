@@ -36,13 +36,13 @@ Before you start this tutorial:
 
 ## Update subscriber's quote preferences
 
-To update a subscriber's quote preferences, you need to send a `PUT` request to the `/subscribers/{id}` endpoint with the updated preference information.
+To update a subscriber's quote preferences, you need to send a `PATCH` request to the `/subscribers/{id}` endpoint with the updated preference information.
 
 Follow these steps:
 
 1. Open your API testing tool (e.g., Postman).
 2. Create a new request with the following details:
-    - METHOD: PUT
+    - METHOD: PATCH
     - URL: `{{base_url}}/subscribers/{id}` (replace `{id}` with the actual subscriberId)
     - Headers:
         - Content-Type: application/json
@@ -66,7 +66,7 @@ The successful request should return a status code `200 OK` with the updated sub
 Request:
 
 ```js
-PUT {{base_url}}/subscribers/1
+PATCH {{base_url}}/subscribers/1
 Content-Type: application/json
 
 {
@@ -105,6 +105,6 @@ If you encounter errors, here are some common issues and their solutions:
 
 Now that you've learned how to update a subscriber's quote preferences, you can:
 
-- pdate other subscriber details like delivery method or frequency.
+- Update other subscriber details like delivery method or frequency.
 - Retrieve the updated subscriber information to confirm changes.
 - Use this method to build a preference management feature in your application.

@@ -36,13 +36,13 @@ Before you start this tutorial:
 
 ## Update subscriber information
 
-To update a subscriber's email or mobile number, you need to send a `PUT` request to the `/subscribers/{id}` endpoint with the updated information.
+To update a subscriber's email or mobile number, you need to send a `PATCH` request to the `/subscribers/{id}` endpoint with the updated information.
 
 Follow these steps:
 
 1. Open your API testing tool (e.g., Postman).
 2. Create a new request with the following details:
-    - METHOD: PUT
+    - METHOD: PATCH
     - URL: `{{base_url}}/subscribers/{id}` (replace `{id}` with the actual subscriberId)
     - Headers:
         - Content-Type: application/json
@@ -65,7 +65,7 @@ The successful request should return a status code `200 OK` with the updated sub
 Request:
 
 ```http
-PUT {{base_url}}/subscribers/1
+PATCH {{base_url}}/subscribers/1
 Content-Type: application/json
 
 {

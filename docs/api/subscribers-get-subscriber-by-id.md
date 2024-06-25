@@ -9,10 +9,14 @@ This endpoint allows you to retrieve a specific subscriber by their ID from the 
 
 You need to provide the `subscriberId` in the URL path, and the API will return the corresponding quote object if it exist.
 
+## Method
+
+GET
+
 ## URL
 
 ```shell
-{GET}{base_url}/subscribers/{id}
+{base_url}/subscribers/{id}
 ```
 
 ## Sample request
