@@ -1,143 +1,76 @@
 ---
 layout: default
-title: Your Page Title
+title: Replace a subscriber
 ---
 
-# Update a subscriber
+# Replace a subscriber
 
-This endpoint allows you to update a subscriber's information in the Quoteable API, providing flexibility to modify subscriber details as needed.
-
-You need to provide the subscriber's ID in the URL path and the updated subscriber details in the request body. The API will update the subscriber's information and return the updated subscriber object in the response.
+Replaces an existing subscriber record.
 
 ## Method
 
-PUT
+<span class="method method--put">PUT</span>
 
-## URL
+## Endpoint
 
-```shell
+```text
 {base_url}/subscribers/{id}
 ```
 
-## Sample request
+## Path parameters
 
-To update a subscriber with ID 5, you would send the following request:
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `id` | integer | Required | Unique subscriber ID. |
 
-```shell
-PUT {base_url}/subscribers/5
-Content-Type: application/json
+## Query parameters
 
-{
-  "lastName": "Parker",
-  "firstName": "Peter",
-  "email": "peter.parker@example.com",
-  "mobile": "5551234567",
-  "healthQuote": true,
-  "loveQuote": true,
-  "helpPplQuote": false,
-  "deliverTo": 2,
-  "frequency": 1
-}
-```
+None.
 
-## Sample response
+## Headers
 
-Upon successful update of the subscriber, the API will return a `200 OK` status code with the updated subscriber object in the response body.
-
-```js
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "id": 5,
-  "lastName": "Parker",
-  "firstName": "Peter",
-  "email": "peter.parker@example.com",
-  "mobile": "5551234567",
-  "healthQuote": true,
-  "loveQuote": true,
-  "helpPplQuote": false,
-  "deliverTo": 2,
-  "frequency": 1
-}
-```
-
-If the subscriber with the specified ID does not exist, the API will return a `404 Not Found` status code.
-
-## Params
-
-| Parameter | Type | Description |
-| ------------- | ----------- | ----------- |
-| `id` | integer | The unique identifier of the subscriber to be updated. |
-
-## Request headers
-
-```shell
-Content-Type: application/json
-```
+| Header | Required | Value |
+| ------ | -------- | ----- |
+| `Content-Type` | Required | `application/json` |
 
 ## Request body
 
-This is the structure and fields of the JSON object that you should in the request body when you update a subscriber.
-
-```js
-{
-  "lastName": string,
-  "firstName": string,
-  "email": string,
-  "mobile": string,
-  "healthQuote": boolean,
-  "loveQuote": boolean,
-  "helpPplQuote": boolean,
-  "deliverTo": integer,
-  "frequency": integer
-}
-```
-
-## Sample request body
-
-This is an example of a JSON object that you can send in the request body when you update a subscriber.
-
-```js
-{
-  "lastName": "Parker",
-  "firstName": "Peter",
-  "email": "peter.parker@example.com",
-  "mobile": "5551234567",
-  "healthQuote": true,
-  "loveQuote": true,
-  "helpPplQuote": false,
-  "deliverTo": 2,
-  "frequency": 1
-}
-```
+Send the complete subscriber object without the `id`.
 
 ## Response body
 
-This is the structure and fields of the JSON object that will be returned in the response body after successfully updating a subscriber.
+Returns the updated subscriber.
 
-```js
-{
-  "id": integer,
-  "lastName": string,
-  "firstName": string,
-  "email": string,
-  "mobile": string,
-  "healthQuote": boolean,
-  "loveQuote": boolean,
-  "helpPplQuote": boolean,
-  "deliverTo": integer,
-  "frequency": integer
-}
+## Status codes
+
+| Status code | Status | Description |
+| ----------- | ------ | ----------- |
+| 200 | OK | The subscriber was updated. |
+| 400 | Bad Request | The request body is invalid. |
+| 404 | Not Found | No subscriber exists with the specified ID. |
+
+## Example request
+
+```shell
+curl --request PUT "http://localhost:3000/subscribers/5" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "lastName": "Parker",
+    "firstName": "Peter",
+    "email": "peter.parker@example.com",
+    "mobile": "5551234567",
+    "healthQuote": true,
+    "loveQuote": true,
+    "helpPplQuote": false,
+    "deliverTo": 2,
+    "frequency": 1
+  }'
 ```
 
-## Sample response body
+## Example response
 
-After updating a subscriber, the API will return the updated subscriber object in the response body.
-
-```js
+```json
 {
-  "id": 5,
   "lastName": "Parker",
   "firstName": "Peter",
   "email": "peter.parker@example.com",
@@ -146,17 +79,7 @@ After updating a subscriber, the API will return the updated subscriber object i
   "loveQuote": true,
   "helpPplQuote": false,
   "deliverTo": 2,
-  "frequency": 1
+  "frequency": 1,
+  "id": 5
 }
 ```
-
-## Return status
-
-The table below lists the possible HTTP status codes that can be returned by the API, along with their corresponding meanings.
-
-| HTTP Status Code | Return status | Description |
-| ------------- | ----------- | ----------- |
-| 200 | OK | Subscriber successfully updated. |
-| 400 | Bad Request | Invalid or missing parameters in the request body. |
-| 404 | Not Found | Subscriber with the specified ID not found. |
-| 500 | Internal server Error | An unexpected error occurred on the server. |

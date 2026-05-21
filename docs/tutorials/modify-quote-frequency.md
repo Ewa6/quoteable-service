@@ -36,26 +36,28 @@ Before you start this tutorial:
 
 ## Modify subscriber's quote frequency
 
-To modify a subscriber's quote frequency, you need to send a `PUT` request to the `/subscribers/{id}` endpoint with the updated `frequency` value.
+To modify a subscriber's quote frequency, send a `PATCH` request to the `/subscribers/{id}` endpoint with the updated `frequency` value.
 
 Follow these steps:
 
 1. Open your API testing tool (e.g., Postman).
 2. Create a new request with the following details:
-    - METHOD: PUT
-    - URL: `{{base_url}}/subscribers/{id}` (replace `{id}` with the actual subscriberId)
+    - METHOD: PATCH
+    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriberId)
     - Headers:
         - Content-Type: application/json
         - Add any required authentication headers (if applicable).
-    - Body (raw JSON):
+    - Request:
 
-    ```json
-    {
-      "frequency": 2
-    }
-    ```
+```shell
+curl --request PATCH "http://localhost:3000/subscribers/{id}" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "frequency": 2
+  }'
+```
 
-3. Send the request.
+Send the request.
 
 The successful request should return a status code `200 OK` with the updated subscriber object in the response body.
 
@@ -63,24 +65,23 @@ The successful request should return a status code `200 OK` with the updated sub
 
 Request:
 
-```js
-PUT {{base_url}}/subscribers/1
-Content-Type: application/json
-
-{
-  "frequency": 2
-}
+```shell
+curl --request PATCH "http://localhost:3000/subscribers/1" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "frequency": 2
+  }'
 ```
 
 Response body:
 
-```js
+```json
 {
   "id": 1,
   "lastName": "Stark",
   "firstName": "Tony",
   "email": "tony.stark@example.com",
-  "mobile": "2125551234",
+  "mobile": "2125551212",
   "healthQuote": true,
   "loveQuote": false,
   "helpPplQuote": true,

@@ -1,1 +1,3 @@
-json-server -w to-do-db-source.json
+@echo off
+cd /d "%~dp0\.."
+npm.cmd run start:api

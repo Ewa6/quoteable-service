@@ -43,21 +43,23 @@ Follow these steps:
 1. Open your API testing tool (e.g., Postman).
 2. Create a new request with the following details:
     - METHOD: PATCH
-    - URL: `{{base_url}}/subscribers/{id}` (replace `{id}` with the actual subscriberId)
+    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriberId)
     - Headers:
         - Content-Type: application/json
         - Add any required authentication headers (if applicable).
-    - Body (raw JSON):
+    - Request:
 
-    ```json
-    {
-      "healthQuote": true,
-      "loveQuote": false,
-      "helpPplQuote": true
-    }
-    ```
+```shell
+curl --request PATCH "http://localhost:3000/subscribers/{id}" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "healthQuote": true,
+    "loveQuote": false,
+    "helpPplQuote": true
+  }'
+```
 
-3. Send the request.
+Send the request.
 
 The successful request should return a status code `200 OK` with the updated subscriber object in the response body.
 
@@ -65,26 +67,25 @@ The successful request should return a status code `200 OK` with the updated sub
 
 Request:
 
-```js
-PATCH {{base_url}}/subscribers/1
-Content-Type: application/json
-
-{
-  "healthQuote": true,
-  "loveQuote": false,
-  "helpPplQuote": true
-}
+```shell
+curl --request PATCH "http://localhost:3000/subscribers/1" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "healthQuote": true,
+    "loveQuote": false,
+    "helpPplQuote": true
+  }'
 ```
 
 Response body:
 
-```js
+```json
 {
   "id": 1,
   "lastName": "Stark",
   "firstName": "Tony",
   "email": "tony.stark@example.com",
-  "mobile": "2125551234",
+  "mobile": "2125551212",
   "healthQuote": true,
   "loveQuote": false,
   "helpPplQuote": true,

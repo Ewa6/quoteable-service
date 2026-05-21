@@ -35,60 +35,58 @@ Before you start this tutorial:
 
 ## Add a custom quote for a subscriber
 
-To add a custom quote for a subscriber, you need to send a `PUT` request to the `/subscribers/{id}` endpoint with the `customQuote` set to `true` and the `customQuoteText` containing the quote.
+To add a custom quote for a subscriber, send a `PATCH` request to the `/quotes/{id}` endpoint with `customQuote` set to `true` and `customQuoteText` containing the quote.
 
 Follow these steps:
 
 1. Open your API testing tool (e.g., Postman).
 2. Create a new request with the following details:
-    - METHOD: PUT
-    - URL: `{{base_url}}/subscribers/{id}` (replace `{id}` with the actual subscriberId)
+    - METHOD: PATCH
+    - URL: `http://localhost:3000/quotes/{id}` (replace `{id}` with the quote ID you want to update)
     - Headers:
         - Content-Type: application/json
         - Add any required authentication headers (if applicable).
-    - Body (raw JSON):
+    - Request:
 
-    ```json
-    {
-      "customQuote": true,
-      "customQuoteText": "Your custom quote goes here."
-    }
-    ```
+```shell
+curl --request PATCH "http://localhost:3000/quotes/{id}" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "customQuote": true,
+    "customQuoteText": "Your custom quote goes here."
+  }'
+```
 
-3. Send the request.
+Send the request.
 
-The successful request should return a status code `200 OK` with the updated subscriber object in the response body.
+The successful request should return a status code `200 OK` with the updated quote object in the response body.
 
 ## Example
 
 Request:
 
-```js
-PUT {{base_url}}/subscribers/1
-Content-Type: application/json
-
-{
-  "customQuote": true,
-  "customQuoteText": "Be the change you wish to see in the world. - Mahatma Gandhi"
-}
+```shell
+curl --request PATCH "http://localhost:3000/quotes/3" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "customQuote": true,
+    "customQuoteText": "Be the change you wish to see in the world. - Mahatma Gandhi"
+  }'
 ```
 
 Response body:
 
-```js
+```json
 {
-  "id": 1,
-  "lastName": "Stark",
-  "firstName": "Tony",
-  "email": "tony.stark@example.com",
-  "mobile": "2125551234",
-  "healthQuote": true,
-  "loveQuote": false,
-  "helpPplQuote": true,
-  "deliverTo": 1,
-  "frequency": 3,
+  "subscriberId": 1,
+  "id": 3,
+  "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. - Anne Wilson Schaef",
+  "loveQuoteText": "",
+  "helpPplQuoteText": "At the end, it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It's about what you've given back. - Denzel Washington",
   "customQuote": true,
-  "customQuoteText": "Be the change you wish to see in the world. - Mahatma Gandhi"
+  "customQuoteText": "Be the change you wish to see in the world. - Mahatma Gandhi",
+  "shareQuote": true,
+  "shareQuoteContact": "pepper.pots@stark.com"
 }
 ```
 
@@ -96,7 +94,7 @@ Response body:
 
 If you encounter errors, here are some common issues and their solutions:
 
-- `404 Not Found`: Check that you're using the correct `subscriberId`.
+- `404 Not Found`: Check that you're using the correct quote ID.
 - `400 Bad Request`: Ensure your JSON is correctly formatted and includes both `customQuote` and `customQuoteText` fields.
 - `401 Unauthorized`: Verify that you're including the correct authentication headers.
 - `422 Unprocessable Entity`: This may occur if the custom quote text is empty or exceeds the maximum allowed length. Ensure the quote text is not empty and within the allowed character limit.

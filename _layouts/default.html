@@ -4,19 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=inline-code-fix">
 </head>
 <body>
-  <header>
-    <!-- Add your header content here -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-title" href="{{ '/' | relative_url }}">Quoteable Service</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ '/docs/' | relative_url }}">Home</a>
+        <a href="{{ '/docs/api/subscribers.html' | relative_url }}">API reference</a>
+        <a href="{{ '/docs/tutorials/quick-start-guide.html' | relative_url }}">Tutorials</a>
+        <a href="https://github.com/Ewa6/quoteable-service">GitHub</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    {{ content }}
+  <main class="page-content">
+    <div class="page-layout">
+      <aside class="sidebar" aria-label="Documentation navigation">
+        <nav class="sidebar-nav">
+          {% for section in site.data.navigation %}
+            <div class="sidebar-nav__section">
+              <h2 class="sidebar-nav__title">{{ section.title }}</h2>
+              <ul class="sidebar-nav__list">
+                {% for item in section.items %}
+                  <li>
+                    <a
+                      href="{{ item.url | relative_url }}"
+                      {% if page.url == item.url %}aria-current="page" class="is-active"{% endif %}
+                    >{{ item.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </nav>
+      </aside>
+
+      <div class="content-area">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          {% assign api_prefix = page.url | slice: 0, 10 %}
+          {% assign tutorial_prefix = page.url | slice: 0, 15 %}
+          {% if page.url == "/" %}
+            <span aria-current="page">Home</span>
+          {% else %}
+            <a href="{{ '/' | relative_url }}">Home</a>
+            {% if page.url == "/docs/" %}
+              <span aria-current="page">{{ page.title }}</span>
+            {% elsif api_prefix == "/docs/api/" %}
+              <a href="{{ '/docs/' | relative_url }}">Docs</a>
+              <a href="{{ '/docs/#api-reference' | relative_url }}">API reference</a>
+              <span aria-current="page">{{ page.title }}</span>
+            {% elsif tutorial_prefix == "/docs/tutorials" %}
+              <a href="{{ '/docs/' | relative_url }}">Docs</a>
+              <a href="{{ '/docs/#tutorials' | relative_url }}">Tutorials</a>
+              <span aria-current="page">{{ page.title }}</span>
+            {% else %}
+              <span aria-current="page">{{ page.title }}</span>
+            {% endif %}
+          {% endif %}
+        </nav>
+
+        {{ content }}
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <!-- Add your footer content here -->
+  <footer class="site-footer">
+    <p>Course project documentation for a mock JSON Server API.</p>
   </footer>
 </body>
 </html>

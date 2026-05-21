@@ -1,70 +1,59 @@
 ---
 layout: default
-title: Your Page Title
+title: Delete a quote
 ---
 
-# Delete a quote by ID
+# Delete a quote
 
-This endpoint allows you to remove a specific quote from the Quoteable API when it is no longer needed or when it needs to be deleted from the system.
-
-You need to provide the quote's ID in the URL path. The API will delete the quote and return a success status code if the deletion is successful.
+Deletes a quote record.
 
 ## Method
 
-DELETE
+<span class="method method--delete">DELETE</span>
 
-## URL
+## Endpoint
 
-```shell
+```text
 {base_url}/quotes/{id}
 ```
 
-## Sample request
+## Path parameters
 
-To remove a quote with ID 3, send the following request:
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `id` | integer | Required | Unique quote ID. |
 
-```shell
-DELETE {base_url}/quotes/3
-```
+## Query parameters
 
-## Sample response
+None.
 
-Upon successful deletion of the quote, the API will return a `204 No Content` status code with an empty response body.
+## Headers
 
-```text
-HTTP/1.1 204 No Content
-```
-
-Note that when you delete a quote, it is permanently removed from the system. This action cannot be undone, so use this endpoint with caution.
-
-If you attempt to remove a quote that doesn't exist, the API will return a `404 Not Found` status code.
-
-## Params
-
-| Parameter | Type | Description |
-| ------------- | ----------- | ----------- |
-| `id` | integer | The unique identifier of the quote to be removed. |
-
-## Request headers
-
-```shell
-Content-Type: application/json
-```
+None.
 
 ## Request body
 
-None
+None.
 
 ## Response body
 
-None
+None.
 
-## Return status
+## Status codes
 
-The table below lists the possible HTTP status codes that can be returned by the API, along with their corresponding meanings.
+| Status code | Status | Description |
+| ----------- | ------ | ----------- |
+| 200 | OK | JSON Server deleted the quote and returned the deleted record. |
+| 404 | Not Found | No quote exists with the specified ID. |
 
-| HTTP Status Code | Return status | Description |
-| ------------- | ----------- | ----------- |
-| 204 | No Content | Quote successfully removed. |
-| 404 | Not Found | Quote with the specified ID not found. |
-| 500 | Internal server Error | An unexpected error occurred on the server. |
+## Example request
+
+```shell
+curl --request DELETE "http://localhost:3000/quotes/3"
+```
+
+## Example response
+
+```json
+{}
+```

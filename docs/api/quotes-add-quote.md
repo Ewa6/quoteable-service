@@ -1,148 +1,89 @@
 ---
 layout: default
-title: Your Page Title
+title: Create a quote
 ---
 
-# Add a new quote for a subscriber
+# Create a quote
 
-This endpoint allows you to add a new quote for a specific subscriber. You can provide the subscriber's ID along with the quote details. The API will create a new quote associated with the specified subscriber and return the created quote object in the response.
+Creates a quote record and associates it with a subscriber.
 
 ## Method
 
-POST
+<span class="method method--post">POST</span>
 
-## URL
+## Endpoint
 
-```shell
-{base_url}/quotes/
+```text
+{base_url}/quotes
 ```
 
-## Sample request
+## Path parameters
 
-To add a new quote for a subscriber with ID 2, send the following request:
+None.
 
-```shell
-POST {base_url}/quotes/
-Content-Type: application/json
+## Query parameters
 
-{
-  "subscriberId": 2,
-  "id": 6,
-  "healthQuoteText": "",
-  "loveQuoteText": "Love is not about possession. Love is about appreciation. – Osho",
-  "helpPplQuoteText": "",
-  "customQuote": false,
-  "customQuoteText": "",
-  "shareQuote": true,
-  "shareQuoteContact": "bucky.barnes@example.com"
-}
-```
+None.
 
-## Sample response
+## Headers
 
-Upon successful creation of the quote, the API will return a `201 Created` status code with the created quote object in the response body.
-
-```js
-{
-  "subscriberId": 2,
-  "id": 6,
-  "healthQuoteText": "",
-  "loveQuoteText": "Love is not about possession. Love is about appreciation. – Osho",
-  "helpPplQuoteText": "",
-  "customQuote": false,
-  "customQuoteText": "",
-  "shareQuote": true,
-  "shareQuoteContact": "bucky.barnes@example.com"
-}
-```
-
-## Params
-
-None
-
-## Request headers
-
-```shell
-Content-Type: application/json
-```
+| Header | Required | Value |
+| ------ | -------- | ----- |
+| `Content-Type` | Required | `application/json` |
 
 ## Request body
 
-This is the structure and fields of the JSON object that you send in the request body when you add a new quote.
+| Property | Type | Required | Description |
+| -------- | ---- | -------- | ----------- |
+| `subscriberId` | integer | Required | ID of the subscriber associated with the quote. |
+| `healthQuoteText` | string | Optional | Health quote text. |
+| `loveQuoteText` | string | Optional | Love quote text. |
+| `helpPplQuoteText` | string | Optional | Helping People quote text. |
+| `customQuote` | boolean | Required | Whether this is a custom quote. |
+| `customQuoteText` | string | Optional | Custom quote text. |
+| `shareQuote` | boolean | Required | Whether to share the quote. |
+| `shareQuoteContact` | string | Optional | Contact for sharing the quote. |
 
-``` js
-{
-  "subscriberId": integer,
-  "healthQuoteText": string,
-  "loveQuoteText": string,
-  "helpPplQuoteText": string,
-  "customQuote": boolean,
-  "customQuoteText": string,
-  "shareQuote": boolean,
-  "shareQuoteContact": string
-}
+## Response body
+
+Returns the created quote, including the generated `id`.
+
+## Status codes
+
+| Status code | Status | Description |
+| ----------- | ------ | ----------- |
+| 201 | Created | The quote was created. |
+| 400 | Bad Request | The request body is invalid. |
+
+## Example request
+
+```shell
+curl --request POST "http://localhost:3000/quotes" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "subscriberId": 2,
+    "healthQuoteText": "",
+    "loveQuoteText": "Love is not about possession. Love is about appreciation. - Osho",
+    "helpPplQuoteText": "",
+    "customQuote": false,
+    "customQuoteText": "",
+    "shareQuote": true,
+    "shareQuoteContact": "bucky.barnes@example.com"
+  }'
 ```
 
-## Sample request body
+## Example response
 
-This is an example of a JSON object that you can send in the request body when you add a new quote.
-
-``` js
+```json
 {
   "subscriberId": 2,
   "healthQuoteText": "",
-  "loveQuoteText": "Love is not about possession. Love is about appreciation. – Osho",
+  "loveQuoteText": "Love is not about possession. Love is about appreciation. - Osho",
   "helpPplQuoteText": "",
   "customQuote": false,
   "customQuoteText": "",
   "shareQuote": true,
-  "shareQuoteContact": "bucky.barnes@example.com"
+  "shareQuoteContact": "bucky.barnes@example.com",
+  "id": 6
 }
 ```
-
-### Response body
-
-This is the structure and fields of the JSON object that will be returned in the response body after successfully adding a new quote. Additionally, you'll get the `201 Created` status code.
-
-``` js
-{
-  "subscriberId": integer,
-  "id": integer,
-  "healthQuoteText": string,
-  "loveQuoteText": string,
-  "helpPplQuoteText": string,
-  "customQuote": boolean,
-  "customQuoteText": string,
-  "shareQuote": boolean,
-  "shareQuoteContact": string
-}
-```
-
-## Sample response body
-
-Once a new quote has been created, this is the example response body you get:
-
-```js
-{
-  "subscriberId": 2,
-  "id": 6,
-  "healthQuoteText": "",
-  "loveQuoteText": "Love is not about possession. Love is about appreciation. – Osho",
-  "helpPplQuoteText": "",
-  "customQuote": false,
-  "customQuoteText": "",
-  "shareQuote": true,
-  "shareQuoteContact": "bucky.barnes@example.com"
-}
-```
-
-## Return status
-
-The table below lists the possible HTTP status codes that can be returned by the API, along with their corresponding meanings.
-
-| HTTP Status Code | Return status | Description |
-| ------------- | ----------- | ----------- |
-| 201 | Created | Quote successfully added for the subscriber. |
-| 400 | Bad Request | Invalid or missing parameters in the request body. |
-| 404 | Not Found | Subscriber with the specified subscriberId not found. |
-| 500 | Internal server Error | An unexpected error occurred on the server. |

@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "Quoteable Service API",
+    "description": "Postman examples for the Quoteable Service mock API. Set the base_url variable to http://localhost:3000 when you run the service locally.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Subscribers",
+      "item": [
+        {
+          "name": "Retrieve all subscribers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/subscribers",
+              "host": ["{{base_url}}"],
+              "path": ["subscribers"]
+            }
+          }
+        },
+        {
+          "name": "Retrieve a subscriber by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/subscribers/1",
+              "host": ["{{base_url}}"],
+              "path": ["subscribers", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create a subscriber",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lastName\": \"Parker\",\n  \"firstName\": \"Peter\",\n  \"email\": \"p.parker@example.com\",\n  \"mobile\": \"5551234567\",\n  \"healthQuote\": true,\n  \"loveQuote\": false,\n  \"helpPplQuote\": true,\n  \"deliverTo\": 1,\n  \"frequency\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/subscribers",
+              "host": ["{{base_url}}"],
+              "path": ["subscribers"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Quotes",
+      "item": [
+        {
+          "name": "Retrieve all quotes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/quotes",
+              "host": ["{{base_url}}"],
+              "path": ["quotes"]
+            }
+          }
+        },
+        {
+          "name": "Retrieve a quote by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/quotes/3",
+              "host": ["{{base_url}}"],
+              "path": ["quotes", "3"]
+            }
+          }
+        },
+        {
+          "name": "Create a quote",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subscriberId\": 2,\n  \"healthQuoteText\": \"\",\n  \"loveQuoteText\": \"Love is not about possession. Love is about appreciation. - Osho\",\n  \"helpPplQuoteText\": \"\",\n  \"customQuote\": false,\n  \"customQuoteText\": \"\",\n  \"shareQuote\": true,\n  \"shareQuoteContact\": \"bucky.barnes@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/quotes",
+              "host": ["{{base_url}}"],
+              "path": ["quotes"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

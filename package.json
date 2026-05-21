@@ -1,0 +1,12 @@
+{
+  "name": "quoteable-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mock JSON Server API and documentation for Quoteable Service.",
+  "scripts": {
+    "start:api": "json-server --watch quoteable-service-api/quoteable-service-db-source.json --port 3000"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}

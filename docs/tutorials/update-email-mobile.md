@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Your Page Title
+title: Update a subscriber's email or mobile number
 ---
 
 # Update a subscriber's email or mobile
@@ -43,20 +43,22 @@ Follow these steps:
 1. Open your API testing tool (e.g., Postman).
 2. Create a new request with the following details:
     - METHOD: PATCH
-    - URL: `{{base_url}}/subscribers/{id}` (replace `{id}` with the actual subscriberId)
+    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriberId)
     - Headers:
         - Content-Type: application/json
         - Add any required authentication headers (if applicable).
-    - Body (raw JSON):
+    - Request:
 
-    ```json
-    {
-      "email": "new.email@example.com",
-      "mobile": "9876543210"
-    }
-    ```
+```shell
+curl --request PATCH "http://localhost:3000/subscribers/{id}" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "email": "new.email@example.com",
+    "mobile": "9876543210"
+  }'
+```
 
-3. Send the request.
+Send the request.
 
 The successful request should return a status code `200 OK` with the updated subscriber object in the response body.
 
@@ -64,19 +66,18 @@ The successful request should return a status code `200 OK` with the updated sub
 
 Request:
 
-```http
-PATCH {{base_url}}/subscribers/1
-Content-Type: application/json
-
-{
-  "email": "tony.stark.new@example.com",
-  "mobile": "2125559999"
-}
+```shell
+curl --request PATCH "http://localhost:3000/subscribers/1" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "email": "tony.stark.new@example.com",
+    "mobile": "2125559999"
+  }'
 ```
 
 Response body:
 
-```js
+```json
 {
   "id": 1,
   "lastName": "Stark",
