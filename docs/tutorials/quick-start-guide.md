@@ -13,8 +13,8 @@ Before you send your first API test call, make sure Node.js, Postman, and GitHub
 
 To prepare your operating system, follow these instructions:
 
-- [Prepare your Windows device](prepare-windows.md)
-- [Prepare your Mac device](prepare-mac.md)
+- [Prepare your Windows device](prepare-windows.html)
+- [Prepare your Mac device](prepare-mac.html)
 
 ## Step 1: Fork the Quoteable Service repository
 
@@ -87,7 +87,7 @@ curl "http://localhost:3000/subscribers"
 
 ## Next steps
 
-Now that you have a basic understanding of how to use the Quoteable Service, you can explore the API reference for the [`subscribers` resource](../api/subscribers.md) and [`quotes` resource](../api/quotes.md). These topics introduce more detailed information on each endpoint, including request and response formats, error handling, and additional parameters.
+Now that you have a basic understanding of how to use the Quoteable Service, you can explore the API reference for the [`subscribers` resource](../api/subscribers.html) and [`quotes` resource](../api/quotes.html). These topics introduce more detailed information on each endpoint, including request and response formats, error handling, and additional parameters.
 
 
 <!-- If you need more examples and practice with the Quoteable Service, see our [tutorials] -->

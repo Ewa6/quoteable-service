@@ -45,8 +45,8 @@ Use the `quotes` resource to manage quote records associated with subscribers.
 
 | Method | Endpoint | Description |
 | ------ | -------- | ----------- |
-| <span class="method method--get">GET</span> | `/quotes` | [Retrieve all quotes](quotes-get-all-quotes.md). |
-| <span class="method method--get">GET</span> | `/quotes/{id}` | [Retrieve one quote by ID](quotes-get-quote-by-id.md). |
-| <span class="method method--post">POST</span> | `/quotes` | [Create a quote](quotes-add-quote.md). |
-| <span class="method method--put">PUT</span> | `/quotes/{id}` | [Replace a quote](quotes-update-quote.md). |
-| <span class="method method--delete">DELETE</span> | `/quotes/{id}` | [Delete a quote](quotes-delete-quote-by-id.md). |
+| <span class="method method--get">GET</span> | `/quotes` | [Retrieve all quotes](quotes-get-all-quotes.html). |
+| <span class="method method--get">GET</span> | `/quotes/{id}` | [Retrieve one quote by ID](quotes-get-quote-by-id.html). |
+| <span class="method method--post">POST</span> | `/quotes` | [Create a quote](quotes-add-quote.html). |
+| <span class="method method--put">PUT</span> | `/quotes/{id}` | [Replace a quote](quotes-update-quote.html). |
+| <span class="method method--delete">DELETE</span> | `/quotes/{id}` | [Delete a quote](quotes-delete-quote-by-id.html). |
