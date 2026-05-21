@@ -16,9 +16,9 @@ The API has two resources:
 
 Prepare your environment, start the mock service, and make your first API request:
 
-* [Prepare your Windows device](tutorials/prepare-windows.md)
-* [Prepare your Mac device](tutorials/prepare-mac.md)
-* [Quick start guide](tutorials/quick-start-guide.md)
+* [Prepare your Windows device](tutorials/prepare-windows.html)
+* [Prepare your Mac device](tutorials/prepare-mac.html)
+* [Quick start guide](tutorials/quick-start-guide.html)
 
 ## API reference
 
@@ -28,7 +28,7 @@ Use `{base_url}` for the server URL. When you run the mock API locally, `{base_u
 http://localhost:3000
 ```
 
-<div class="api-index">
+<div class="api-index" markdown="1">
 
 ### Subscribers endpoints
 
@@ -40,7 +40,7 @@ http://localhost:3000
 | <span class="method method--put">PUT</span> | `/subscribers/{id}` | Replace a subscriber. |
 | <span class="method method--delete">DELETE</span> | `/subscribers/{id}` | Delete a subscriber. |
 
-See the [`subscribers` resource overview](api/subscribers.md).
+See the [`subscribers` resource overview](api/subscribers.html).
 
 ### Quotes endpoints
 
@@ -52,7 +52,7 @@ See the [`subscribers` resource overview](api/subscribers.md).
 | <span class="method method--put">PUT</span> | `/quotes/{id}` | Replace a quote. |
 | <span class="method method--delete">DELETE</span> | `/quotes/{id}` | Delete a quote. |
 
-See the [`quotes` resource overview](api/quotes.md).
+See the [`quotes` resource overview](api/quotes.html).
 
 </div>
 
@@ -60,14 +60,14 @@ See the [`quotes` resource overview](api/quotes.md).
 
 Use these tutorials to practice common API tasks:
 
-* [Create a subscriber and add their first quote](tutorials/create-subscriber-add-first-quote.md)
-* [Retrieve all quotes for a subscriber](tutorials/all-quotes-for-subscriber.md)
-* [Update a subscriber's email or mobile number](tutorials/update-email-mobile.md)
-* [Update a subscriber's quote preferences](tutorials/update-subscribers-quote-preferences.md)
-* [Modify a subscriber's quote frequency](tutorials/modify-quote-frequency.md)
-* [Change a subscriber's delivery method](tutorials/change-delivery-method.md)
-* [Add a custom quote for a subscriber](tutorials/add-custom-quote-for-subscriber.md)
-* [Implement basic error handling](tutorials/implement-error-handling.md)
+* [Create a subscriber and add their first quote](tutorials/create-subscriber-add-first-quote.html)
+* [Retrieve all quotes for a subscriber](tutorials/all-quotes-for-subscriber.html)
+* [Update a subscriber's email or mobile number](tutorials/update-email-mobile.html)
+* [Update a subscriber's quote preferences](tutorials/update-subscribers-quote-preferences.html)
+* [Modify a subscriber's quote frequency](tutorials/modify-quote-frequency.html)
+* [Change a subscriber's delivery method](tutorials/change-delivery-method.html)
+* [Add a custom quote for a subscriber](tutorials/add-custom-quote-for-subscriber.html)
+* [Implement basic error handling](tutorials/implement-error-handling.html)
 
 ## Limitations
 

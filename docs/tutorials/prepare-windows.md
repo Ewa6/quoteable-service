@@ -40,4 +40,4 @@ GitHub Desktop allows you to efficiently work with the repository on your comput
 
 ## Next steps
 
-Now that you have all necessary tools on your computer, go to the [quick start guide](quick-start-guide.md). The quick start guide shows how to clone the repository, install project dependencies, start the JSON server, and make your first call to the Quoteable Service.
+Now that you have all necessary tools on your computer, go to the [quick start guide](quick-start-guide.html). The quick start guide shows how to clone the repository, install project dependencies, start the JSON server, and make your first call to the Quoteable Service.
