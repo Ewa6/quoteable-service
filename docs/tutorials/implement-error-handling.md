@@ -47,22 +47,28 @@ Here's a step-by-step guide to implement basic error handling when using the Quo
 Here's a basic example using JavaScript and the Fetch API:
 
 ```javascript
+const BASE_URL = 'http://localhost:3000';
+
 async function makeApiRequest(endpoint, method = 'GET', body = null) {
   try {
-    const response = await fetch(`${BASE_URL}${endpoint}`, {
-      method: method,
+    const options = {
+      method,
       headers: {
-        'Content-Type': 'application/json',
-        // Add any necessary authentication headers
-      },
-      body: body ? JSON.stringify(body) : null
-    });
+        'Content-Type': 'application/json'
+      }
+    };
 
-    const data = await response.json();
+    if (body) {
+      options.body = JSON.stringify(body);
+    }
+
+    const response = await fetch(`${BASE_URL}${endpoint}`, options);
+    const text = await response.text();
+    const data = text ? JSON.parse(text) : null;
 
     if (!response.ok) {
-      // If the response status is not in the 200-299 range
-      throw new Error(`API error: ${response.status} - ${data.message || 'Unknown error'}`);
+      const message = data?.message || response.statusText || 'Unknown error';
+      throw new Error(`API error: ${response.status} - ${message}`);
     }
 
     return data;
@@ -73,34 +79,36 @@ async function makeApiRequest(endpoint, method = 'GET', body = null) {
   }
 }
 
-// Usage example
-try {
-  const subscriber = await makeApiRequest('/subscribers/1');
-  console.log('Subscriber data:', subscriber);
-} catch (error) {
-  console.error('Failed to fetch subscriber:', error.message);
-  // Show error message to the user
-  displayErrorToUser('Failed to fetch subscriber data. Please try again later.');
+function showError(message) {
+  const errorContainer = document.querySelector('[data-error-message]');
+
+  if (errorContainer) {
+    errorContainer.textContent = message;
+  }
 }
+
+async function loadSubscriber() {
+  try {
+    const subscriber = await makeApiRequest('/subscribers/1');
+    console.log('Subscriber data:', subscriber);
+  } catch (error) {
+    console.error('Failed to fetch subscriber:', error.message);
+    showError('Failed to fetch subscriber data. Please try again later.');
+  }
+}
+
+loadSubscriber();
 ```
 
 ## Common error scenarios and how to handle them
 
-- 400 Bad Request
-    - Cause: Invalid input data
-    - Handling: Check the error message for details about what's wrong with the input. Validate user input before sending requests.
-- 401 Unauthorized
-    - Cause: Invalid or missing authentication credentials
-    - Handling: Check if the user is logged in. If not, prompt for login. If yes, the access token might be expired - try refreshing it.
-- 404 Not Found
-    - Cause: The requested resource doesn't exist
-    - Handling: Check if the ID or endpoint is correct. If it should exist, it might have been deleted - update your local data.
-- 422 Unprocessable Entity
-    - Cause: The request was well-formed but contains semantic errors
-    - Handling: Similar to 400, but often related to business logic. Check the error message for details and adjust your request accordingly.
-- 500 Internal Server Error
-    - Cause: Something went wrong on the server
-    - Handling: This is not your fault. Log the error, and retry the request after a short delay. If it persists, contact the API support.
+| Error | Cause | Handling |
+| ----- | ----- | -------- |
+| 400 Bad Request | Invalid input data. | Check the error message for details about what is wrong with the input. Validate user input before sending requests. |
+| 401 Unauthorized | Invalid or missing authentication credentials. | Check whether the user is logged in. If the user is not logged in, prompt them to log in. If the user is logged in, the access token might be expired. Try refreshing it. |
+| 404 Not Found | The requested resource does not exist. | Check whether the ID or endpoint is correct. If the resource should exist, it might have been deleted. Update your local data. |
+| 422 Unprocessable Entity | The request is well formed but contains semantic errors. | Check the error message for details and adjust your request. This error is often related to business logic. |
+| 500 Internal Server Error | Something went wrong on the server. | Log the error and retry the request after a short delay. If the error persists, contact API support. |
 
 ## Best practices
 

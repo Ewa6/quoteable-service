@@ -1,136 +1,83 @@
 ---
 layout: default
-title: Your Page Title
+title: Create a subscriber
 ---
 
-# Add a new subscriber
+# Create a subscriber
 
-This endpoint allows you to create a new subscriber in the Quoteable API. You can provide the subscriber's details, including their name, email, mobile number, quote preferences, delivery method, and frequency.
-
-The API will create a new subscriber and return the created subscriber object in the response.
+Creates a subscriber record. JSON Server assigns the `id`.
 
 ## Method
 
-POST
+<span class="method method--post">POST</span>
 
-## URL
+## Endpoint
 
-```shell
-{base_url}/subscribers/
+```text
+{base_url}/subscribers
 ```
 
-## Sample request
+## Path parameters
 
-To create a new subscriber, send the following request:
+None.
 
-```shell
-POST {base_url}/subscribers/
-Content-Type: application/json
+## Query parameters
 
-{
-  "lastName": "Parker",
-  "firstName": "Peter",
-  "email": "p.parker@example.com",
-  "mobile": "5551234567",
-  "healthQuote": true,
-  "loveQuote": false,
-  "helpPplQuote": true,
-  "deliverTo": 1,
-  "frequency": 2
-}
-```
+None.
 
-## Sample response
+## Headers
 
-Upon a successful creation of the subscriber, the API will return a `201 Created` status code with the created subscriber object in the response body.
-
-```js
-{
-  "id": 5,
-  "lastName": "Parker",
-  "firstName": "Peter",
-  "email": "p.parker@example.com",
-  "mobile": "5551234567",
-  "healthQuote": true,
-  "loveQuote": false,
-  "helpPplQuote": true,
-  "deliverTo": 1,
-  "frequency": 2
-}
-```
-
-## Params
-
-None
-
-## Request headers
-
-```shell
-Content-Type: application/json
-```
+| Header | Required | Value |
+| ------ | -------- | ----- |
+| `Content-Type` | Required | `application/json` |
 
 ## Request body
 
-This is the structure and fields of the JSON object that you should send in the request body when you add a new subscriber.
-
-```js
-{
-  "lastName": string,
-  "firstName": string,
-  "email": string,
-  "mobile": string,
-  "healthQuote": boolean,
-  "loveQuote": boolean,
-  "helpPplQuote": boolean,
-  "deliverTo": integer,
-  "frequency": integer
-}
-```
-
-## Sample request body
-
-This is an example of a JSON object that you can send in the request body when you add a new subscriber.
-
-```js
-{
-  "lastName": "Parker",
-  "firstName": "Peter",
-  "email": "p.parker@example.com",
-  "mobile": "5551234567",
-  "healthQuote": true,
-  "loveQuote": false,
-  "helpPplQuote": true,
-  "deliverTo": 1,
-  "frequency": 2
-}
-```
+| Property | Type | Required | Description |
+| -------- | ---- | -------- | ----------- |
+| `lastName` | string | Required | Subscriber's last name. |
+| `firstName` | string | Required | Subscriber's first name. |
+| `email` | string | Required | Subscriber's email address. |
+| `mobile` | string | Optional | Subscriber's mobile phone number. |
+| `healthQuote` | boolean | Optional | Whether the subscriber wants Health quotes. |
+| `loveQuote` | boolean | Required | Whether the subscriber wants Love quotes. |
+| `helpPplQuote` | boolean | Optional | Whether the subscriber wants Helping People quotes. |
+| `deliverTo` | integer | Required | Delivery method. Use `1` for email and `2` for text message. |
+| `frequency` | integer | Required | Delivery frequency. Use `1` for daily, `2` for weekly, and `3` for monthly. |
 
 ## Response body
 
-This is the structure and fields of the JSON object that will be returned in the response body after successfully adding a new subscriber.
+Returns the created subscriber, including the generated `id`.
 
-```js
-{
-  "id": integer,
-  "lastName": string,
-  "firstName": string,
-  "email": string,
-  "mobile": string,
-  "healthQuote": boolean,
-  "loveQuote": boolean,
-  "helpPplQuote": boolean,
-  "deliverTo": integer,
-  "frequency": integer
-}
+## Status codes
+
+| Status code | Status | Description |
+| ----------- | ------ | ----------- |
+| 201 | Created | The subscriber was created. |
+| 400 | Bad Request | The request body is invalid. |
+
+## Example request
+
+```shell
+curl --request POST "http://localhost:3000/subscribers" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "lastName": "Parker",
+    "firstName": "Peter",
+    "email": "p.parker@example.com",
+    "mobile": "5551234567",
+    "healthQuote": true,
+    "loveQuote": false,
+    "helpPplQuote": true,
+    "deliverTo": 1,
+    "frequency": 2
+  }'
 ```
 
-## Sample response body
+## Example response
 
-Once a new subscriber has been created, this is the example response body you get:
-
-```js
+```json
 {
-  "id": 5,
   "lastName": "Parker",
   "firstName": "Peter",
   "email": "p.parker@example.com",
@@ -139,16 +86,7 @@ Once a new subscriber has been created, this is the example response body you ge
   "loveQuote": false,
   "helpPplQuote": true,
   "deliverTo": 1,
-  "frequency": 2
+  "frequency": 2,
+  "id": 5
 }
 ```
-
-## Return status
-
-The table below lists the possible HTTP status codes that can be returned by the API, along with their corresponding meanings.
-
-| HTTP Status Code | Return status | Description |
-| ------------- | ----------- | ----------- |
-| 201 | Created | Subscriber successfully created. |
-| 400 | Bad Request | Invalid or missing parameters in the request body. |
-| 500 | Internal server Error | An unexpected error occurred on the server. |

@@ -1,91 +1,93 @@
 ---
 layout: default
-title: Your Page Title
+title: Retrieve all quotes
 ---
 
-# Get all quotes
+# Retrieve all quotes
 
-Returns an array of `quotes` objects that contains all quotes associated with the subscribers.
+Returns all quote records.
 
 ## Method
 
-GET
+<span class="method method--get">GET</span>
 
-## URL
+## Endpoint
 
-```shell
-{server_url}/quotes
+```text
+{base_url}/quotes
 ```
 
-## Params
+## Path parameters
 
-None
+None.
 
-## Request headers
+## Query parameters
 
-```shell
-Content-Type: application/json
-```
+None.
+
+## Headers
+
+None.
 
 ## Request body
 
-None
+None.
 
-## Return body
+## Response body
 
-```js
+```json
 [
-    {
-        "subscriberId": 1,
-        "id": 3,
-        "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. – Anne Wilson Schaef",
-        "loveQuoteText": "",
-        "helpPplQuoteText": "At the end, it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It's about what you've given back. – Denzel Washington",
-        "customQuote": "False",
-        "customQuoteText": "",
-        "shareQuote": "True",
-        "shareQuoteContact": "pepper.pots@stark.com"
-    },
-    {
-        "subscriberId": 2,
-        "id": 1,
-        "healthQuoteText": "",
-        "loveQuoteText": "When we lose someone we love, we must learn not to live without them, but to live with the love they left behind. - Unknown",
-        "helpPplQuoteText": "If you're not making someone else's life better, then you're wasting your time. — Will Smith",
-        "customQuote": "False",
-        "customQuoteText": "",
-        "shareQuote": "False",
-        "shareQuoteContact": ""
-    },
-    {
-        "subscriberId": 3,
-        "id": 5,
-        "healthQuoteText": "",
-        "loveQuoteText": "There is a little boy inside the man who is my brother… Oh, how I hated that little boy. And how I love him too. — Anna Quindlen",
-        "helpPplQuoteText": "",
-        "customQuote": "False",
-        "customQuoteText": "",
-        "shareQuote": "False",
-        "shareQuoteContact": ""
-    },
-    {
-        "subscriberId": 4,
-        "id": 2,
-        "healthQuoteText": "Be bold, be brave enough to be your true self. - Queen Latifah",
-        "loveQuoteText": "Because, if you could love someone, and keep loving them, without being loved back . . . then that love had to be real. It hurt too much to be anything else. ― Sarah Cross",
-        "helpPplQuoteText": "No one is useless in this world who lightens the burdens of another. ― Charles Dickens",
-        "customQuote": "False",
-        "customQuoteId": "",
-        "customQuoteText": "",
-        "shareQuote": "True",
-        "shareQuoteContact": "bruce.banner@example.com"
-    }
+  {
+    "subscriberId": 1,
+    "id": 3,
+    "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. - Anne Wilson Schaef",
+    "loveQuoteText": "",
+    "helpPplQuoteText": "At the end, it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It's about what you've given back. - Denzel Washington",
+    "customQuote": false,
+    "customQuoteText": "",
+    "shareQuote": true,
+    "shareQuoteContact": "pepper.pots@stark.com"
+  }
 ]
 ```
 
-## Return status
+## Status codes
 
-| Status value | Return status | Description |
-| ------------- | ----------- | ----------- |
-| 200 | Success | Requested data returned successfully |
-| ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
+| Status code | Status | Description |
+| ----------- | ------ | ----------- |
+| 200 | OK | The request succeeded. |
+
+## Example request
+
+```shell
+curl "http://localhost:3000/quotes"
+```
+
+## Example response
+
+```json
+[
+  {
+    "subscriberId": 1,
+    "id": 3,
+    "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. - Anne Wilson Schaef",
+    "loveQuoteText": "",
+    "helpPplQuoteText": "At the end, it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It's about what you've given back. - Denzel Washington",
+    "customQuote": false,
+    "customQuoteText": "",
+    "shareQuote": true,
+    "shareQuoteContact": "pepper.pots@stark.com"
+  },
+  {
+    "subscriberId": 2,
+    "id": 1,
+    "healthQuoteText": "",
+    "loveQuoteText": "When we lose someone we love, we must learn not to live without them, but to live with the love they left behind. - Unknown",
+    "helpPplQuoteText": "If you're not making someone else's life better, then you're wasting your time. - Will Smith",
+    "customQuote": false,
+    "customQuoteText": "",
+    "shareQuote": false,
+    "shareQuoteContact": ""
+  }
+]
+```

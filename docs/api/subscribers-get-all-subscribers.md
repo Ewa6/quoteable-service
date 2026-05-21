@@ -1,94 +1,96 @@
 ---
 layout: default
-title: Your Page Title
+title: Retrieve all subscribers
 ---
 
-# Get all subscribers
+# Retrieve all subscribers
 
-Returns an array of `subscribers` objects that contains all subscribers that have registered to receive the quotes.
+Returns all subscriber records.
 
 ## Method
 
-GET
+<span class="method method--get">GET</span>
 
-## URL
+## Endpoint
 
-```shell
-{server_url}/subscribers
+```text
+{base_url}/subscribers
 ```
 
-## Params
+## Path parameters
 
-None
+None.
 
-## Request headers
+## Query parameters
 
-```shell
-Content-Type: application/json
-```
+None.
+
+## Headers
+
+None.
 
 ## Request body
 
-None
+None.
 
-## Return body
+## Response body
 
-```js
+```json
 [
-    {
-        "id": 1,
-        "lastName": "Stark",
-        "firstName": "Tony",
-        "email": "t.stark@example.com",
-        "mobile": "2125551212",
-        "healthQuote": "True",
-        "loveQuote": "False",
-        "helpPplQuote": "True",
-        "deliverTo": 1,
-        "frequency": 3
-    },
-    {
-        "id": 2,
-        "lastName": "Rogers",
-        "firstName": "Stephen",
-        "email": "s.rogers@example.com",
-        "mobile": "7185551212",
-        "healthQuote": "False",
-        "loveQuote": "True",
-        "helpPplQuote": "True",
-        "deliverTo": 2,
-        "frequency": 1
-    },
-    {
-        "id": 3,
-        "lastName": "Odinson",
-        "firstName": "Thor",
-        "email": "t.odinson@example.com",
-        "mobile": "",
-        "healthQuote": "False",
-        "loveQuote": "True",
-        "helpPplQuote": "False",
-        "deliverTo": 2,
-        "frequency": 2
-    },
-    {
-        "id": 4,
-        "lastName": "Romanov",
-        "firstName": "Natasha",
-        "email": "n.romanov@example.com",
-        "mobile": "2025551212",
-        "healthQuote": "True",
-        "loveQuote": "True",
-        "helpPplQuote": "True",
-        "deliverTo": 1,
-        "frequency": 1
-    }
+  {
+    "id": 1,
+    "lastName": "Stark",
+    "firstName": "Tony",
+    "email": "t.stark@example.com",
+    "mobile": "2125551212",
+    "healthQuote": true,
+    "loveQuote": false,
+    "helpPplQuote": true,
+    "deliverTo": 1,
+    "frequency": 3
+  }
 ]
 ```
 
-## Return status
+## Status codes
 
-| Status value | Return status | Description |
-| ------------- | ----------- | ----------- |
-| 200 | Success | Requested data returned successfully |
-| ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
+| Status code | Status | Description |
+| ----------- | ------ | ----------- |
+| 200 | OK | The request succeeded. |
+
+## Example request
+
+```shell
+curl "http://localhost:3000/subscribers"
+```
+
+## Example response
+
+```json
+[
+  {
+    "id": 1,
+    "lastName": "Stark",
+    "firstName": "Tony",
+    "email": "t.stark@example.com",
+    "mobile": "2125551212",
+    "healthQuote": true,
+    "loveQuote": false,
+    "helpPplQuote": true,
+    "deliverTo": 1,
+    "frequency": 3
+  },
+  {
+    "id": 2,
+    "lastName": "Rogers",
+    "firstName": "Stephen",
+    "email": "s.rogers@example.com",
+    "mobile": "7185551212",
+    "healthQuote": false,
+    "loveQuote": true,
+    "helpPplQuote": true,
+    "deliverTo": 2,
+    "frequency": 1
+  }
+]
+```

@@ -1,2 +1,3 @@
 #!/bin/bash
-json-server -w quoteable-service-db-source.json
+cd "$(dirname "$0")/.."
+npm run start:api

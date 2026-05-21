@@ -1,18 +1,13 @@
 ---
-layout: page
+layout: default
 title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# About this project
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Quoteable Service is a University of Washington course project focused on API documentation for a mock application.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+The application uses JSON Server and a local JSON file to simulate an API. The documentation explains the available resources, common CRUD operations, setup workflow, and example requests.
 
-
-[jekyll-organization]: https://github.com/jekyll
+The project is intended to demonstrate API documentation structure, clear endpoint reference topics, beginner-friendly tutorials, and lightweight documentation-site polish.

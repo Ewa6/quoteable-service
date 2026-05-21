@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Your Page Title
+title: Retrieve all quotes for a subscriber
 ---
 
 # Retrieve all quotes for a subscriber
@@ -36,11 +36,11 @@ To do so, follow these steps:
 1. Open your API testing tool (e.g., Postman).
 2. Create a new request with the following details:
     - METHOD: GET
-    - URL: `{{base_url}}/subscribers/{id}?_embed=quotes` (replace `{id}` with the actual `subscriberId`)
+    - URL: `http://localhost:3000/subscribers/{id}?_embed=quotes` (replace `{id}` with the actual `subscriberId`)
     - Headers:
         - Content-Type: application/json
         - Add any required authentication headers (if applicable).
-3. Send the request.
+Send the request.
 
 The successful request should return the status code `200 OK`.
 
@@ -50,13 +50,13 @@ In the response, you will see the subscriber object with an additional quotes ar
 
 Request:
 
-```js
-GET {{base_url}}/subscribers/1?_embed=quotes
+```shell
+curl "http://localhost:3000/subscribers/1?_embed=quotes"
 ```
 
 Response body:
 
-```js
+```json
 {
   "id": 1,
   "lastName": "Stark",
@@ -72,9 +72,9 @@ Response body:
     {
       "subscriberId": 1,
       "id": 3,
-      "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. – Anne Wilson Schaef",
+      "healthQuoteText": "Good health is not something we can buy. However, it can be an extremely valuable savings account. - Anne Wilson Schaef",
       "loveQuoteText": "",
-      "helpPplQuoteText": "At the end, it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It's about what you've given back. – Denzel Washington",
+      "helpPplQuoteText": "At the end, it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It's about what you've given back. - Denzel Washington",
       "customQuote": false,
       "customQuoteText": "",
       "shareQuote": true,

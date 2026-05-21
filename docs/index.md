@@ -1,114 +1,74 @@
 ---
 layout: default
-title: Your Page Title
+title: Quoteable Service documentation
 ---
 
-# Quoteable Service
+# Quoteable Service documentation
 
-Welcome to the Quoteable Service! This API allows you to store and retrieve user data along with their favorite quotes.
-With Quoteable Service, you can create apps that give your users a daily dose of inspiration and vitamin Q!
-You can choose the quotes from three topic areas:
+Quoteable Service is a mock API for managing subscribers and the quotes they want to receive. The service is built with JSON Server and is intended for learning, testing, and API documentation practice.
 
-* Love
-* Health
-* Helping Others
+The API has two resources:
 
-The Quoteable Service has two main resources: `subscribers` and `quotes`.
+* `subscribers`: Stores subscriber contact details, delivery preferences, and quote category preferences.
+* `quotes`: Stores quote records associated with subscribers.
 
-## Use cases
+## Get started
 
-Use the Quoteable Service to enrich your applications with a daily dose inspiration. Quoteable Service is great for:
+Prepare your environment, start the mock service, and make your first API request:
 
-* **Motivational apps**: Deliver a new inspirational quote to users each day, tailored to their chosen topic areas.
-* **Personalized dashboards**: Integrate user-specific quotes into personalized dashboards or homepages.
-* **Social media bots**: Build a bot that shares inspirational quotes on social media platforms.
-* **Educational tools**: Develop educational tools that use quotes to inspire and engage students.
+* [Prepare your Windows device](tutorials/prepare-windows.md)
+* [Prepare your Mac device](tutorials/prepare-mac.md)
+* [Quick start guide](tutorials/quick-start-guide.md)
 
-## Features
+## API reference
 
-The Quoteable Service provides the following features:
+Use `{base_url}` for the server URL. When you run the mock API locally, `{base_url}` is:
 
-* Limit your quotes to specific topics or receive random quotes from all areas.
-* Choose a delivery schedule and the destination for daily pick-me-ups.
-* Add custom quotes that will be reviewed by our quote experts.
-* Share quotes via email or SMS.
+```text
+http://localhost:3000
+```
 
-## Prepare your environment
+<div class="api-index">
 
-To get started with the Quoteable Service, follow these setup guides depending on your operating system:
+### Subscribers endpoints
 
-* [Windows](tutorials/prepare-windows.md)
-* [MAC](tutorials/prepare-mac.md)
+| Method | Endpoint | Description |
+| ------ | -------- | ----------- |
+| <span class="method method--get">GET</span> | `/subscribers` | Retrieve all subscribers. |
+| <span class="method method--get">GET</span> | `/subscribers/{id}` | Retrieve one subscriber by ID. |
+| <span class="method method--post">POST</span> | `/subscribers` | Create a subscriber. |
+| <span class="method method--put">PUT</span> | `/subscribers/{id}` | Replace a subscriber. |
+| <span class="method method--delete">DELETE</span> | `/subscribers/{id}` | Delete a subscriber. |
 
-## Quick Start Guide
+See the [`subscribers` resource overview](api/subscribers.md).
 
-Once you have prepared your operating system, make your first API call to the Quoteable Service! Follow this [Quick Start Guide](tutorials/quick-start-guide.md) for detailed instructions.
+### Quotes endpoints
 
-## API Reference
+| Method | Endpoint | Description |
+| ------ | -------- | ----------- |
+| <span class="method method--get">GET</span> | `/quotes` | Retrieve all quotes. |
+| <span class="method method--get">GET</span> | `/quotes/{id}` | Retrieve one quote by ID. |
+| <span class="method method--post">POST</span> | `/quotes` | Create a quote. |
+| <span class="method method--put">PUT</span> | `/quotes/{id}` | Replace a quote. |
+| <span class="method method--delete">DELETE</span> | `/quotes/{id}` | Delete a quote. |
 
-Explore the detailed API reference to understand the available resources and how to interact with them.
+See the [`quotes` resource overview](api/quotes.md).
 
-### `subscribers` resource
-
-See the [`subscribers' resource overview](api/subscribers.md) for detailed information about the resource.
-
-See these chapters for the API reference on the most useful CRUD actions:
-
-* **GET**: [Retrieve a list of subscribers](api/subscribers-get-all-subscribers.md)
-* **POST**: [Create a new subscriber](api/subscribers-add-subscriber.md)
-* **PUT**: [Update subscriber information](api/subscribers-update-subscriber.md)
-* **DELETE**: [Delete a subscriber](api/subscribers-delete-subscriber.md)
-
-### `quotes` resource
-
-See the [`quotes' resource overview](api/quotes.md) for detailed information about the resource.
-
-See these chapters for the API reference on the most useful CRUD actions:
-
-* **GET**: [Retrieve a list of quotes](api/quotes-get-all-quotes.md)
-* **POST**: [Add a new quote](api/quotes-add-quote.md)
-* **PUT**: [Update a quote](api/quotes-update-quote.md)
-* **DELETE**: [Delete a quote](api/quotes-delete-quote-by-id.md)
+</div>
 
 ## Tutorials
 
-Dive into our step-by-step tutorials to learn how to use the API effectively:
+Use these tutorials to practice common API tasks:
 
-[Create a new subscriber and add their first quote](tutorials/create-subscriber-add-first-quote.md)
+* [Create a subscriber and add their first quote](tutorials/create-subscriber-add-first-quote.md)
+* [Retrieve all quotes for a subscriber](tutorials/all-quotes-for-subscriber.md)
+* [Update a subscriber's email or mobile number](tutorials/update-email-mobile.md)
+* [Update a subscriber's quote preferences](tutorials/update-subscribers-quote-preferences.md)
+* [Modify a subscriber's quote frequency](tutorials/modify-quote-frequency.md)
+* [Change a subscriber's delivery method](tutorials/change-delivery-method.md)
+* [Add a custom quote for a subscriber](tutorials/add-custom-quote-for-subscriber.md)
+* [Implement basic error handling](tutorials/implement-error-handling.md)
 
-[Retrieve all quotes for a subscriber](tutorials/all-quotes-for-subscriber.md)
+## Limitations
 
-[Update a subscriber's email or mobile](tutorials/update-email-mobile.md)
-
-[Update a subscriber's quote preferences](tutorials/update-subscribers-quote-preferences.md)
-
-[Modify a subscriber's quote frequency](tutorials/modify-quote-frequency.md)
-
-[Add a custom quote for a subscriber](tutorials/add-custom-quote-for-subscriber.md)
-
-[Implement basic error handling when using the API](tutorials/implement-error-handling.md)
-
-## Contact us
-
-We are here to help you with any questions or issues you might have. Reach out to us through any of the following methods:
-
-### Support
-
-For technical support or assistance with using the API, contact our support team:
-
-Email: <support@quoteableapi.com>
-Phone: +1 (800) 555-1234
-Hours: Monday to Friday, 9 AM - 5 PM EST
-
-### Feedback
-
-We value your feedback! If you have any suggestions or comments about the Quoteable Service, let us know:
-
-* **Email**: <feedback@quoteableapi.com>
-
-### Social Media
-
-Stay connected with us on social media for the latest updates, news, and tips:
-
-* **Facebook**: Quoteable Service
-* **LinkedIn**: Quoteable Service
+This project uses JSON Server to simulate an API. It does not include authentication, production validation, rate limits, or a custom backend.

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Your Page Title
+title: Create a subscriber and add their first quote
 ---
 
 # Create a new subscriber and add their first quote
@@ -34,14 +34,16 @@ First, we'll create a new subscriber using the POST method to the /subscribers e
 1. Open your API testing tool, for example, Postman.
 2. Create a new request with the following details:
     - METHOD: POST
-    - URL: `{{base_url}}/subscribers`
+    - URL: `http://localhost:3000/subscribers`
     - Headers:
         - Content-Type: application/json
         - Add any required authentication headers (if applicable).
-    - Body (raw JSON):
+    - Request:
 
-    ```json
-    {
+```shell
+curl --request POST "http://localhost:3000/subscribers" \
+  --header "Content-Type: application/json" \
+  --data '{
     "lastName": "Doe",
     "firstName": "Jane",
     "email": "jane.doe@example.com",
@@ -51,9 +53,10 @@ First, we'll create a new subscriber using the POST method to the /subscribers e
     "helpPplQuote": false,
     "deliverTo": 1,
     "frequency": 2
-    }```
+  }'
+```
 
-3. Send the request.
+Send the request.
 
 The successful request should return the status code `201 Created` with the newly created subscriber object in the response body. Note the `id` of the new subscriber, as we'll need it for the next step.
 
@@ -63,27 +66,30 @@ Now that we have created a new subscriber, let's add their first quote using the
 
 1. Create another new request in your API testing tool with these details:
     - METHOD: POST
-    - URL: {{base_url}}/quotes
+    - URL: `http://localhost:3000/quotes`
     - Headers:
         - Content-Type: application/json
         - Add any required authentication headers (if applicable).
-    - Body (raw JSON):
+    - Request:
 
-```json
-{
-  "subscriberId": 5,
-  "healthQuoteText": "The greatest wealth is health. - Virgil",
-  "loveQuoteText": "Where there is love there is life. - Mahatma Gandhi",
-  "helpPplQuoteText": "",
-  "customQuote": false,
-  "shareQuote": true,
-  "shareQuoteContact": "friend@example.com"
-}
+```shell
+curl --request POST "http://localhost:3000/quotes" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "subscriberId": 5,
+    "healthQuoteText": "The greatest wealth is health. - Virgil",
+    "loveQuoteText": "Where there is love there is life. - Mahatma Gandhi",
+    "helpPplQuoteText": "",
+    "customQuote": false,
+    "customQuoteText": "",
+    "shareQuote": true,
+    "shareQuoteContact": "friend@example.com"
+  }'
 ```
 
 *(Replace `5` with the actual `id` of the subscriber you created in Step 1)*
 
-2. Send the request.
+Send the request.
 
 The successful request should return the status code `201 Created` with the newly created quote object in the response body.
 
