@@ -4,17 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=inline-code-fix">
+  <script>
+    try {
+      if (localStorage.getItem("quoteable-theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (error) {
+      document.documentElement.removeAttribute("data-theme");
+    }
+  </script>
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=theme-toggle">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-title" href="{{ '/' | relative_url }}">Quoteable Service</a>
+      <a class="site-title" href="{{ '/docs/' | relative_url }}">Quoteable Service</a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="{{ '/docs/' | relative_url }}">Home</a>
-        <a href="{{ '/docs/api/subscribers.html' | relative_url }}">API reference</a>
-        <a href="{{ '/docs/tutorials/quick-start-guide.html' | relative_url }}">Tutorials</a>
+        <a href="{{ '/docs/' | relative_url }}">Overview</a>
+        <details class="site-nav__dropdown">
+          <summary>Get started</summary>
+          <div class="site-nav__dropdown-menu">
+            <a href="{{ '/docs/tutorials/prepare-windows.html' | relative_url }}">Prepare your Windows device</a>
+            <a href="{{ '/docs/tutorials/prepare-mac.html' | relative_url }}">Prepare your Mac device</a>
+            <a href="{{ '/docs/tutorials/quick-start-guide.html' | relative_url }}">Make your first request</a>
+          </div>
+        </details>
+        <details class="site-nav__dropdown">
+          <summary>API reference</summary>
+          <div class="site-nav__dropdown-menu">
+            <a href="{{ '/docs/api/subscribers.html' | relative_url }}">Subscribers resource</a>
+            <a href="{{ '/docs/api/quotes.html' | relative_url }}">Quotes resource</a>
+          </div>
+        </details>
+        <details class="site-nav__dropdown">
+          <summary>Tutorials</summary>
+          <div class="site-nav__dropdown-menu">
+            <a href="{{ '/docs/tutorials/create-resources.html' | relative_url }}">Create resources</a>
+            <a href="{{ '/docs/tutorials/modify-subscriber-settings.html' | relative_url }}">Modify subscriber settings</a>
+            <a href="{{ '/docs/tutorials/handle-errors.html' | relative_url }}">Handle errors</a>
+          </div>
+        </details>
         <a href="https://github.com/Ewa6/quoteable-service">GitHub</a>
+        <a
+          class="site-nav__portfolio-link"
+          href="https://technical-writing.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M7 7h5v2H9v6h6v-3h2v5H7V7Z"></path>
+            <path d="M14 5h5v5h-2V8.41l-5.29 5.3-1.42-1.42 5.3-5.29H14V5Z"></path>
+          </svg>
+          <span>View full technical writing portfolio</span>
+        </a>
       </nav>
     </div>
   </header>
@@ -28,11 +70,35 @@
               <h2 class="sidebar-nav__title">{{ section.title }}</h2>
               <ul class="sidebar-nav__list">
                 {% for item in section.items %}
-                  <li>
+                  {% assign item_class = "" %}
+                  {% if page.url == item.url %}
+                    {% assign item_class = "is-active" %}
+                  {% endif %}
+                  {% if item.items %}
+                    {% for child in item.items %}
+                      {% if page.url == child.url %}
+                        {% assign item_class = "is-active-parent" %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                  <li class="sidebar-nav__item">
                     <a
                       href="{{ item.url | relative_url }}"
-                      {% if page.url == item.url %}aria-current="page" class="is-active"{% endif %}
+                      {% if page.url == item.url %}aria-current="page"{% endif %}
+                      {% if item_class != "" %}class="{{ item_class }}"{% endif %}
                     >{{ item.title }}</a>
+                    {% if item.items %}
+                      <ul class="sidebar-nav__sublist">
+                        {% for child in item.items %}
+                          <li>
+                            <a
+                              href="{{ child.url | relative_url }}"
+                              {% if page.url == child.url %}aria-current="page" class="is-active"{% endif %}
+                            >{{ child.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
                   </li>
                 {% endfor %}
               </ul>
@@ -43,25 +109,36 @@
 
       <div class="content-area">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
-          {% assign api_prefix = page.url | slice: 0, 10 %}
-          {% assign tutorial_prefix = page.url | slice: 0, 15 %}
-          {% if page.url == "/" %}
-            <span aria-current="page">Home</span>
-          {% else %}
-            <a href="{{ '/' | relative_url }}">Home</a>
-            {% if page.url == "/docs/" %}
-              <span aria-current="page">{{ page.title }}</span>
-            {% elsif api_prefix == "/docs/api/" %}
-              <a href="{{ '/docs/' | relative_url }}">Docs</a>
-              <a href="{{ '/docs/#api-reference' | relative_url }}">API reference</a>
-              <span aria-current="page">{{ page.title }}</span>
-            {% elsif tutorial_prefix == "/docs/tutorials" %}
-              <a href="{{ '/docs/' | relative_url }}">Docs</a>
-              <a href="{{ '/docs/#tutorials' | relative_url }}">Tutorials</a>
-              <span aria-current="page">{{ page.title }}</span>
-            {% else %}
-              <span aria-current="page">{{ page.title }}</span>
+          {% assign breadcrumb_section = nil %}
+          {% assign breadcrumb_parent = nil %}
+          {% assign breadcrumb_parent_url = nil %}
+
+          {% for section in site.data.navigation %}
+            {% for item in section.items %}
+              {% if page.url == item.url %}
+                {% assign breadcrumb_section = section.title %}
+              {% endif %}
+
+              {% if item.items %}
+                {% for child in item.items %}
+                  {% if page.url == child.url %}
+                    {% assign breadcrumb_section = section.title %}
+                    {% assign breadcrumb_parent = item.title %}
+                    {% assign breadcrumb_parent_url = item.url %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+
+          {% if breadcrumb_section %}
+            <span>{{ breadcrumb_section }}</span>
+            {% if breadcrumb_parent %}
+              <a href="{{ breadcrumb_parent_url | relative_url }}">{{ breadcrumb_parent }}</a>
             {% endif %}
+            <span aria-current="page">{{ page.title }}</span>
+          {% else %}
+            <span aria-current="page">{{ page.title }}</span>
           {% endif %}
         </nav>
 
@@ -72,6 +149,85 @@
 
   <footer class="site-footer">
     <p>Course project documentation for a mock JSON Server API.</p>
+    <label class="theme-toggle">
+      <span class="theme-toggle__label">Dark mode</span>
+      <input class="theme-toggle__input" type="checkbox" role="switch" aria-label="Enable dark mode">
+      <span class="theme-toggle__control" aria-hidden="true"></span>
+    </label>
   </footer>
+
+  <script>
+    const siteNav = document.querySelector(".site-nav");
+    const siteNavDropdowns = [...document.querySelectorAll(".site-nav__dropdown")];
+    const themeToggleInput = document.querySelector(".theme-toggle__input");
+    const themeToggleLabel = document.querySelector(".theme-toggle__label");
+
+    function closeSiteNavDropdowns(exceptDropdown) {
+      siteNavDropdowns.forEach((dropdown) => {
+        if (dropdown !== exceptDropdown) {
+          dropdown.removeAttribute("open");
+        }
+      });
+    }
+
+    siteNavDropdowns.forEach((dropdown) => {
+      dropdown.addEventListener("toggle", () => {
+        if (dropdown.open) {
+          closeSiteNavDropdowns(dropdown);
+        }
+      });
+
+      dropdown.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          dropdown.removeAttribute("open");
+        });
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (siteNav && !siteNav.contains(event.target)) {
+        closeSiteNavDropdowns();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        const openDropdown = siteNavDropdowns.find((dropdown) => dropdown.open);
+        closeSiteNavDropdowns();
+        openDropdown?.querySelector("summary")?.focus();
+      }
+    });
+
+    function setTheme(theme) {
+      const isDark = theme === "dark";
+      if (isDark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+
+      if (themeToggleInput) {
+        themeToggleInput.checked = isDark;
+        themeToggleInput.setAttribute("aria-label", isDark ? "Disable dark mode" : "Enable dark mode");
+      }
+
+      if (themeToggleLabel) {
+        themeToggleLabel.textContent = isDark ? "Light mode" : "Dark mode";
+      }
+
+      try {
+        localStorage.setItem("quoteable-theme", isDark ? "dark" : "light");
+      } catch (error) {
+        // The selected theme still applies for this page view.
+      }
+    }
+
+    const currentTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    setTheme(currentTheme);
+
+    themeToggleInput?.addEventListener("change", () => {
+      setTheme(themeToggleInput.checked ? "dark" : "light");
+    });
+  </script>
 </body>
 </html>

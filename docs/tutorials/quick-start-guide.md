@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Get started with the Quoteable Service
+title: Make your first request
 ---
 
-# Get started with the Quoteable Service
+# Make your first request
 
 Welcome to the Quoteable Service! This guide will walk you through the basic steps to get started with using our API to manage subscribers and their favorite quotes.
 
