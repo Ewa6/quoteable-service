@@ -13,7 +13,7 @@
       document.documentElement.removeAttribute("data-theme");
     }
   </script>
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=mobile-nav">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=mobile-nav-fixes-2">
 </head>
 <body>
   <header class="site-header">
@@ -25,18 +25,21 @@
         aria-expanded="false"
         aria-controls="site-nav"
       >
-        <span class="site-nav__toggle-icon" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
+        <svg class="site-nav__toggle-icon" aria-hidden="true" viewBox="0 0 48 48" focusable="false">
+          <path d="M41 14H7a2 2 0 0 1 0-4h34a2 2 0 0 1 0 4Z"></path>
+          <path d="M41 26H7a2 2 0 0 1 0-4h34a2 2 0 0 1 0 4Z"></path>
+          <path d="M41 38H7a2 2 0 0 1 0-4h34a2 2 0 0 1 0 4Z"></path>
+        </svg>
         <span>Menu</span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <div class="site-nav__mobile-header">
           <span>Menu</span>
           <button class="site-nav__close" type="button" aria-label="Close menu">
-            <span aria-hidden="true">X</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+              <path d="M8.46 8.46a1 1 0 0 1 1.42 0L12 10.59l2.12-2.13a1 1 0 0 1 1.42 1.42L13.41 12l2.13 2.12a1 1 0 0 1-1.42 1.42L12 13.41l-2.12 2.13a1 1 0 0 1-1.42-1.42L10.59 12 8.46 9.88a1 1 0 0 1 0-1.42Z"></path>
+              <path fill-rule="evenodd" d="M7 2a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5H7Zm-3 5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7Z" clip-rule="evenodd"></path>
+            </svg>
           </button>
         </div>
         <a href="{{ '/docs/' | relative_url }}">Overview</a>
@@ -143,12 +146,14 @@
             role="dialog"
             aria-modal="true"
             aria-hidden="true"
-            aria-labelledby="mobile-docs-nav-title"
+            aria-label="Documentation navigation"
           >
             <div class="mobile-docs-nav__header">
-              <h2 id="mobile-docs-nav-title">Documentation navigation</h2>
               <button class="mobile-docs-nav__close" type="button" aria-label="Close documentation navigation">
-                <span aria-hidden="true">X</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                  <path d="M8.46 8.46a1 1 0 0 1 1.42 0L12 10.59l2.12-2.13a1 1 0 0 1 1.42 1.42L13.41 12l2.13 2.12a1 1 0 0 1-1.42 1.42L12 13.41l-2.12 2.13a1 1 0 0 1-1.42-1.42L10.59 12 8.46 9.88a1 1 0 0 1 0-1.42Z"></path>
+                  <path fill-rule="evenodd" d="M7 2a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5H7Zm-3 5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7Z" clip-rule="evenodd"></path>
+                </svg>
               </button>
             </div>
             <nav class="sidebar-nav" aria-label="Documentation navigation">
@@ -219,8 +224,10 @@
 
           {% if breadcrumb_section %}
             <span>{{ breadcrumb_section }}</span>
+            <span class="breadcrumbs__separator" aria-hidden="true">/</span>
             {% if breadcrumb_parent %}
               <a href="{{ breadcrumb_parent_url | relative_url }}">{{ breadcrumb_parent }}</a>
+              <span class="breadcrumbs__separator" aria-hidden="true">/</span>
             {% endif %}
             <span aria-current="page">{{ page.title }}</span>
           {% else %}
