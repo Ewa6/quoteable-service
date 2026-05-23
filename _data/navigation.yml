@@ -1,60 +1,70 @@
-- title: Home
+- title: OVERVIEW
   items:
-    - title: Site home
-      url: /
-    - title: Documentation home
-      url: /docs/
-    - title: About
+    - title: About this project
       url: /about/
+    - title: Introduction
+      url: /docs/
 
-- title: API reference
-  items:
-    - title: Subscribers resource
-      url: /docs/api/subscribers.html
-    - title: Retrieve all subscribers
-      url: /docs/api/subscribers-get-all-subscribers.html
-    - title: Retrieve a subscriber by ID
-      url: /docs/api/subscribers-get-subscriber-by-id.html
-    - title: Create a subscriber
-      url: /docs/api/subscribers-add-subscriber.html
-    - title: Replace a subscriber
-      url: /docs/api/subscribers-update-subscriber.html
-    - title: Delete a subscriber
-      url: /docs/api/subscribers-delete-subscriber.html
-    - title: Quotes resource
-      url: /docs/api/quotes.html
-    - title: Retrieve all quotes
-      url: /docs/api/quotes-get-all-quotes.html
-    - title: Retrieve a quote by ID
-      url: /docs/api/quotes-get-quote-by-id.html
-    - title: Create a quote
-      url: /docs/api/quotes-add-quote.html
-    - title: Replace a quote
-      url: /docs/api/quotes-update-quote.html
-    - title: Delete a quote
-      url: /docs/api/quotes-delete-quote-by-id.html
-
-- title: Tutorials
+- title: GET STARTED
   items:
     - title: Prepare your Windows device
       url: /docs/tutorials/prepare-windows.html
     - title: Prepare your Mac device
       url: /docs/tutorials/prepare-mac.html
-    - title: Get started with the Quoteable Service
+    - title: Make your first request
       url: /docs/tutorials/quick-start-guide.html
-    - title: Create a subscriber and add their first quote
-      url: /docs/tutorials/create-subscriber-add-first-quote.html
-    - title: Retrieve all quotes for a subscriber
-      url: /docs/tutorials/all-quotes-for-subscriber.html
-    - title: Update a subscriber's email or mobile number
-      url: /docs/tutorials/update-email-mobile.html
-    - title: Update a subscriber's quote preferences
-      url: /docs/tutorials/update-subscribers-quote-preferences.html
-    - title: Modify a subscriber's quote frequency
-      url: /docs/tutorials/modify-quote-frequency.html
-    - title: Change a subscriber's quote delivery method
-      url: /docs/tutorials/change-delivery-method.html
-    - title: Add a custom quote for a subscriber
-      url: /docs/tutorials/add-custom-quote-for-subscriber.html
-    - title: Implement basic error handling
-      url: /docs/tutorials/implement-error-handling.html
+
+- title: API REFERENCE
+  items:
+    - title: Subscribers resource
+      url: /docs/api/subscribers.html
+      items:
+        - title: Retrieve all subscribers
+          url: /docs/api/subscribers-get-all-subscribers.html
+        - title: Retrieve a subscriber by ID
+          url: /docs/api/subscribers-get-subscriber-by-id.html
+        - title: Create a subscriber
+          url: /docs/api/subscribers-add-subscriber.html
+        - title: Replace a subscriber
+          url: /docs/api/subscribers-update-subscriber.html
+        - title: Delete a subscriber
+          url: /docs/api/subscribers-delete-subscriber.html
+    - title: Quotes resource
+      url: /docs/api/quotes.html
+      items:
+        - title: Retrieve all quotes
+          url: /docs/api/quotes-get-all-quotes.html
+        - title: Retrieve a quote by ID
+          url: /docs/api/quotes-get-quote-by-id.html
+        - title: Create a quote
+          url: /docs/api/quotes-add-quote.html
+        - title: Replace a quote
+          url: /docs/api/quotes-update-quote.html
+        - title: Delete a quote
+          url: /docs/api/quotes-delete-quote-by-id.html
+
+- title: TUTORIALS
+  items:
+    - title: Create resources
+      url: /docs/tutorials/create-resources.html
+      items:
+        - title: Create a subscriber and add their first quote
+          url: /docs/tutorials/create-subscriber-add-first-quote.html
+        - title: Add a custom quote for a subscriber
+          url: /docs/tutorials/add-custom-quote-for-subscriber.html
+    - title: Modify subscriber settings
+      url: /docs/tutorials/modify-subscriber-settings.html
+      items:
+        - title: Update a subscriber's email or mobile number
+          url: /docs/tutorials/update-email-mobile.html
+        - title: Update a subscriber's quote preferences
+          url: /docs/tutorials/update-subscribers-quote-preferences.html
+        - title: Modify a subscriber's quote frequency
+          url: /docs/tutorials/modify-quote-frequency.html
+        - title: Change a subscriber's quote delivery method
+          url: /docs/tutorials/change-delivery-method.html
+    - title: Handle errors
+      url: /docs/tutorials/handle-errors.html
+      items:
+        - title: Implement basic error handling
+          url: /docs/tutorials/implement-error-handling.html
