@@ -13,13 +13,32 @@
       document.documentElement.removeAttribute("data-theme");
     }
   </script>
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=theme-toggle">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=mobile-nav">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-title" href="{{ '/docs/' | relative_url }}">Quoteable Service</a>
-      <nav class="site-nav" aria-label="Main navigation">
+      <button
+        class="site-nav__toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="site-nav__toggle-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span>Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <div class="site-nav__mobile-header">
+          <span>Menu</span>
+          <button class="site-nav__close" type="button" aria-label="Close menu">
+            <span aria-hidden="true">X</span>
+          </button>
+        </div>
         <a href="{{ '/docs/' | relative_url }}">Overview</a>
         <details class="site-nav__dropdown">
           <summary>Get started</summary>
@@ -55,11 +74,12 @@
             <path d="M7 7h5v2H9v6h6v-3h2v5H7V7Z"></path>
             <path d="M14 5h5v5h-2V8.41l-5.29 5.3-1.42-1.42 5.3-5.29H14V5Z"></path>
           </svg>
-          <span>View full technical writing portfolio</span>
+          <span>View technical writing portfolio</span>
         </a>
       </nav>
     </div>
   </header>
+  <button class="nav-backdrop" type="button" tabindex="-1" aria-hidden="true" aria-label="Close navigation"></button>
 
   <main class="page-content">
     <div class="page-layout">
@@ -108,6 +128,72 @@
       </aside>
 
       <div class="content-area">
+        <div class="mobile-docs-nav">
+          <button
+            class="mobile-docs-nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-docs-nav-panel"
+          >
+            <span>Docs navigation</span>
+          </button>
+          <div
+            class="mobile-docs-nav__panel"
+            id="mobile-docs-nav-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-hidden="true"
+            aria-labelledby="mobile-docs-nav-title"
+          >
+            <div class="mobile-docs-nav__header">
+              <h2 id="mobile-docs-nav-title">Documentation navigation</h2>
+              <button class="mobile-docs-nav__close" type="button" aria-label="Close documentation navigation">
+                <span aria-hidden="true">X</span>
+              </button>
+            </div>
+            <nav class="sidebar-nav" aria-label="Documentation navigation">
+              {% for section in site.data.navigation %}
+                <div class="sidebar-nav__section">
+                  <h3 class="sidebar-nav__title">{{ section.title }}</h3>
+                  <ul class="sidebar-nav__list">
+                    {% for item in section.items %}
+                      {% assign item_class = "" %}
+                      {% if page.url == item.url %}
+                        {% assign item_class = "is-active" %}
+                      {% endif %}
+                      {% if item.items %}
+                        {% for child in item.items %}
+                          {% if page.url == child.url %}
+                            {% assign item_class = "is-active-parent" %}
+                          {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                      <li class="sidebar-nav__item">
+                        <a
+                          href="{{ item.url | relative_url }}"
+                          {% if page.url == item.url %}aria-current="page"{% endif %}
+                          {% if item_class != "" %}class="{{ item_class }}"{% endif %}
+                        >{{ item.title }}</a>
+                        {% if item.items %}
+                          <ul class="sidebar-nav__sublist">
+                            {% for child in item.items %}
+                              <li>
+                                <a
+                                  href="{{ child.url | relative_url }}"
+                                  {% if page.url == child.url %}aria-current="page" class="is-active"{% endif %}
+                                >{{ child.title }}</a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endfor %}
+            </nav>
+          </div>
+        </div>
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           {% assign breadcrumb_section = nil %}
           {% assign breadcrumb_parent = nil %}
@@ -158,9 +244,24 @@
 
   <script>
     const siteNav = document.querySelector(".site-nav");
+    const siteNavToggle = document.querySelector(".site-nav__toggle");
+    const siteNavClose = document.querySelector(".site-nav__close");
     const siteNavDropdowns = [...document.querySelectorAll(".site-nav__dropdown")];
+    const navBackdrop = document.querySelector(".nav-backdrop");
+    const mobileDocsNavPanel = document.querySelector(".mobile-docs-nav__panel");
+    const mobileDocsNavToggle = document.querySelector(".mobile-docs-nav__toggle");
+    const mobileDocsNavClose = document.querySelector(".mobile-docs-nav__close");
     const themeToggleInput = document.querySelector(".theme-toggle__input");
     const themeToggleLabel = document.querySelector(".theme-toggle__label");
+
+    let mainMenuOpen = false;
+    let docsMenuOpen = false;
+
+    function updateOverlayState() {
+      document.body.classList.toggle("nav-overlay-open", mainMenuOpen || docsMenuOpen);
+      navBackdrop?.classList.toggle("is-visible", mainMenuOpen || docsMenuOpen);
+      navBackdrop?.setAttribute("aria-hidden", String(!(mainMenuOpen || docsMenuOpen)));
+    }
 
     function closeSiteNavDropdowns(exceptDropdown) {
       siteNavDropdowns.forEach((dropdown) => {
@@ -169,6 +270,66 @@
         }
       });
     }
+
+    function setSiteNavOpen(isOpen) {
+      if (!siteNav || !siteNavToggle) {
+        return;
+      }
+
+      mainMenuOpen = isOpen;
+      siteNav.classList.toggle("is-open", isOpen);
+      siteNavToggle.setAttribute("aria-expanded", String(isOpen));
+
+      if (!isOpen) {
+        closeSiteNavDropdowns();
+      }
+
+      if (isOpen) {
+        setMobileDocsNavOpen(false);
+      }
+
+      updateOverlayState();
+    }
+
+    function setMobileDocsNavOpen(isOpen) {
+      if (!mobileDocsNavPanel || !mobileDocsNavToggle) {
+        return;
+      }
+
+      docsMenuOpen = isOpen;
+      mobileDocsNavPanel.classList.toggle("is-open", isOpen);
+      mobileDocsNavPanel.setAttribute("aria-hidden", String(!isOpen));
+      mobileDocsNavToggle.setAttribute("aria-expanded", String(isOpen));
+
+      if (isOpen) {
+        setSiteNavOpen(false);
+      }
+
+      updateOverlayState();
+    }
+
+    function closeAllNavigation() {
+      setSiteNavOpen(false);
+      setMobileDocsNavOpen(false);
+    }
+
+    siteNavToggle?.addEventListener("click", () => {
+      setSiteNavOpen(!mainMenuOpen);
+    });
+
+    siteNavClose?.addEventListener("click", () => {
+      setSiteNavOpen(false);
+      siteNavToggle?.focus();
+    });
+
+    mobileDocsNavToggle?.addEventListener("click", () => {
+      setMobileDocsNavOpen(!docsMenuOpen);
+    });
+
+    mobileDocsNavClose?.addEventListener("click", () => {
+      setMobileDocsNavOpen(false);
+      mobileDocsNavToggle?.focus();
+    });
 
     siteNavDropdowns.forEach((dropdown) => {
       dropdown.addEventListener("toggle", () => {
@@ -180,21 +341,50 @@
       dropdown.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           dropdown.removeAttribute("open");
+          setSiteNavOpen(false);
         });
       });
     });
 
-    document.addEventListener("click", (event) => {
-      if (siteNav && !siteNav.contains(event.target)) {
-        closeSiteNavDropdowns();
+    mobileDocsNavPanel?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        setMobileDocsNavOpen(false);
+      });
+    });
+
+    siteNav?.querySelectorAll(":scope > a").forEach((link) => {
+      link.addEventListener("click", () => {
+        setSiteNavOpen(false);
+      });
+    });
+
+    navBackdrop?.addEventListener("click", () => {
+      const shouldFocusMainToggle = mainMenuOpen;
+      const shouldFocusDocsToggle = docsMenuOpen;
+      closeAllNavigation();
+
+      if (shouldFocusMainToggle) {
+        siteNavToggle?.focus();
+      } else if (shouldFocusDocsToggle) {
+        mobileDocsNavToggle?.focus();
       }
     });
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         const openDropdown = siteNavDropdowns.find((dropdown) => dropdown.open);
+        const menuWasOpen = mainMenuOpen;
+        const docsMenuWasOpen = docsMenuOpen;
         closeSiteNavDropdowns();
-        openDropdown?.querySelector("summary")?.focus();
+        closeAllNavigation();
+
+        if (menuWasOpen) {
+          siteNavToggle?.focus();
+        } else if (docsMenuWasOpen) {
+          mobileDocsNavToggle?.focus();
+        } else {
+          openDropdown?.querySelector("summary")?.focus();
+        }
       }
     });
 
