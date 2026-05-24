@@ -13,7 +13,7 @@
       document.documentElement.removeAttribute("data-theme");
     }
   </script>
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=mobile-nav-fixes-2">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=mobile-nav-fixes-3">
 </head>
 <body>
   <header class="site-header">
@@ -255,6 +255,7 @@
     const siteNavClose = document.querySelector(".site-nav__close");
     const siteNavDropdowns = [...document.querySelectorAll(".site-nav__dropdown")];
     const navBackdrop = document.querySelector(".nav-backdrop");
+    const mobileDocsNav = document.querySelector(".mobile-docs-nav");
     const mobileDocsNavPanel = document.querySelector(".mobile-docs-nav__panel");
     const mobileDocsNavToggle = document.querySelector(".mobile-docs-nav__toggle");
     const mobileDocsNavClose = document.querySelector(".mobile-docs-nav__close");
@@ -285,6 +286,7 @@
 
       mainMenuOpen = isOpen;
       siteNav.classList.toggle("is-open", isOpen);
+      document.body.classList.toggle("site-nav-open", isOpen);
       siteNavToggle.setAttribute("aria-expanded", String(isOpen));
 
       if (!isOpen) {
@@ -304,7 +306,9 @@
       }
 
       docsMenuOpen = isOpen;
+      mobileDocsNav?.classList.toggle("is-open", isOpen);
       mobileDocsNavPanel.classList.toggle("is-open", isOpen);
+      document.body.classList.toggle("docs-nav-open", isOpen);
       mobileDocsNavPanel.setAttribute("aria-hidden", String(!isOpen));
       mobileDocsNavToggle.setAttribute("aria-expanded", String(isOpen));
 
