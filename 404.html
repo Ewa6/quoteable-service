@@ -4,6 +4,12 @@ layout: default
 title: Page not found
 ---
 
+<script>
+  if (window.location.pathname === "{{ site.baseurl }}") {
+    window.location.replace("{{ '/' | relative_url }}");
+  }
+</script>
+
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;

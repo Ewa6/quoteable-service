@@ -73,7 +73,7 @@ curl --request PUT "http://localhost:3000/quotes/3" \
   "subscriberId": 1,
   "healthQuoteText": "The greatest wealth is health. - Virgil",
   "loveQuoteText": "",
-  "helpPplQuoteText": "At the end, it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It's about what you've given back. - Denzel Washington",
+  "helpPplQuoteText": "Helping others creates lasting impact. - Quoteable Service",
   "customQuote": false,
   "customQuoteText": "",
   "shareQuote": true,

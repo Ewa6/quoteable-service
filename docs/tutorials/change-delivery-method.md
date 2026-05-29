@@ -5,7 +5,7 @@ title: Change a subscriber's quote delivery method
 
 # Change a subscriber's quote delivery method
 
-This tutorial demonstrates how to update a subscriber's quote delivery method using the Quoteable API. This process allows subscribers to choose whether they want to receive quotes via email or text message.
+This tutorial demonstrates how to update a subscriber's quote delivery method using the Quoteable Service API. This process lets subscribers choose whether they want to receive quotes by email or text message.
 
 <div class="tutorial-duration">
   <div class="icon-container">
@@ -20,8 +20,8 @@ This tutorial demonstrates how to update a subscriber's quote delivery method us
 ## Important notes
 
 - The delivery method is represented by the `deliverTo` field in the subscriber object.
-- `deliverTo` value of 1 represents email delivery, while 2 represents text message delivery.
-- Ensure the subscriber has a valid email address for email delivery or a valid mobile number for text message delivery.
+- A `deliverTo` value of `1` represents email delivery, and `2` represents text message delivery.
+- In this mock API, JSON Server stores the delivery method value that you send. Add contact validation in your own application if you need it.
 - Changing the delivery method doesn't affect the subscriber's quote preferences or frequency.
 
 ## Prerequisites
@@ -29,8 +29,8 @@ This tutorial demonstrates how to update a subscriber's quote delivery method us
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have access to the Quoteable Service API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have a tool such as Postman or cURL installed to make API requests.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Know the <code>id</code> of the subscriber whose delivery method you want to change.</li>
 </ul>
 
@@ -38,15 +38,16 @@ Before you start this tutorial:
 
 To change a subscriber's quote delivery method, send a `PATCH` request to the `/subscribers/{id}` endpoint with the updated `deliverTo` value.
 
+For endpoint details, see [Update a subscriber](../api/subscribers-patch-subscriber.html).
+
 Follow these steps:
 
-1. Open your API testing tool (e.g., Postman).
+1. Open your API testing tool, such as Postman.
 2. Create a new request with the following details:
     - METHOD: PATCH
-    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriberId)
+    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriber ID)
     - Headers:
         - Content-Type: application/json
-        - Add any required authentication headers (if applicable).
     - Request:
 
 ```shell
@@ -59,7 +60,7 @@ curl --request PATCH "http://localhost:3000/subscribers/{id}" \
 
 Send the request.
 
-The successful request should return a status code `200 OK` with the updated subscriber object in the response body.
+A successful request returns a `200 OK` status code with the updated subscriber object in the response body.
 
 ## Example
 
@@ -94,16 +95,14 @@ Response body:
 
 If you encounter errors, here are some common issues and their solutions:
 
-- `404 Not Found`: Check that you're using the correct subscriber id.
-- `400 Bad Request`: Ensure your JSON is correctly formatted and the deliverTo value is either 1 or 2.
-- `401 Unauthorized`: Verify that you're including the correct authentication headers.
-- `422 Unprocessable Entity`: This may occur if trying to set delivery to text message (2) when no mobile number is provided. Ensure the subscriber has a mobile number if selecting text message delivery.
+- `404 Not Found`: Check that you're using the correct subscriber ID.
+- `400 Bad Request`: Make sure your JSON is correctly formatted and the `deliverTo` value is either `1` or `2`.
 
 ## What's next?
 
 Now that you've learned how to change a subscriber's quote delivery method, you can:
 
-- Update other subscriber details like quote preferences or delivery frequency.
+- Update other subscriber details, such as quote preferences or delivery frequency.
 - Retrieve the updated subscriber information to confirm changes.
 - Implement a feature in your application allowing users to toggle between email and text message delivery.
-- Consider adding validation in your application to ensure the appropriate contact information (email or mobile) is available before changing the delivery method.
+- Consider adding validation in your application to make sure the appropriate contact information (email or mobile) is available before changing the delivery method.

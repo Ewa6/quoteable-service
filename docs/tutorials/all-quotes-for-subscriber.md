@@ -5,7 +5,7 @@ title: Retrieve all quotes for a subscriber
 
 # Retrieve all quotes for a subscriber
 
-This tutorial demonstrates how to retrieve a subscriber along with their quotes in a single API request using the `_embed` parameter. By embedding the quotes, you can efficiently retrieve the subscriber's information and their associated quotes without making separate requests for each resource.
+This tutorial demonstrates how to retrieve a subscriber with their quotes in a single API request by using the `_embed` parameter. By embedding the quotes, you can retrieve the subscriber information and associated quotes without making separate requests for each resource.
 
 <div class="tutorial-duration">
   <div class="icon-container">
@@ -22,29 +22,27 @@ This tutorial demonstrates how to retrieve a subscriber along with their quotes 
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
-  <li style="list-style-type: none;"><input type="checkbox"> Have the <code>subscriberId</code> for which you want to retrieve the quotes.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have access to the Quoteable Service API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have a tool such as Postman or cURL installed to make API requests.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Have the subscriber ID for the quotes that you want to retrieve.</li>
 </ul>
 
 ## Retrieve subscriber with associated quotes
 
-To retrieve a subscriber along with their associated quotes, you need to send a `GET` request to the `/subscribers/{id}` endpoint with the `_embed` parameter set to quotes.
+To retrieve a subscriber with their associated quotes, send a `GET` request to the `/subscribers/{id}` endpoint with the `_embed` parameter set to `quotes`.
 
 To do so, follow these steps:
 
-1. Open your API testing tool (e.g., Postman).
+1. Open your API testing tool, such as Postman.
 2. Create a new request with the following details:
     - METHOD: GET
-    - URL: `http://localhost:3000/subscribers/{id}?_embed=quotes` (replace `{id}` with the actual `subscriberId`)
-    - Headers:
-        - Content-Type: application/json
-        - Add any required authentication headers (if applicable).
+    - URL: `http://localhost:3000/subscribers/{id}?_embed=quotes` (replace `{id}` with the actual subscriber ID)
+
 Send the request.
 
-The successful request should return the status code `200 OK`.
+A successful request returns the `200 OK` status code.
 
-In the response, you will see the subscriber object with an additional quotes array containing all the associated quotes for that subscriber.
+In the response, you see the subscriber object with an additional quotes array that contains all the associated quotes for that subscriber.
 
 ## Example
 
@@ -86,4 +84,4 @@ Response body:
 
 ## What's next?
 
-After completing this tutorial, you can explore other endpoints and parameters provided by the Quoteable API to retrieve and manipulate data according to your application's requirements.
+After completing this tutorial, you can explore other endpoints and parameters provided by the Quoteable Service API to retrieve and manipulate data according to your application's requirements.

@@ -25,6 +25,8 @@
           url: /docs/api/subscribers-get-subscriber-by-id.html
         - title: Create a subscriber
           url: /docs/api/subscribers-add-subscriber.html
+        - title: Update a subscriber
+          url: /docs/api/subscribers-patch-subscriber.html
         - title: Replace a subscriber
           url: /docs/api/subscribers-update-subscriber.html
         - title: Delete a subscriber
@@ -38,6 +40,8 @@
           url: /docs/api/quotes-get-quote-by-id.html
         - title: Create a quote
           url: /docs/api/quotes-add-quote.html
+        - title: Update a quote
+          url: /docs/api/quotes-patch-quote.html
         - title: Replace a quote
           url: /docs/api/quotes-update-quote.html
         - title: Delete a quote
@@ -52,6 +56,8 @@
           url: /docs/tutorials/create-subscriber-add-first-quote.html
         - title: Add a custom quote for a subscriber
           url: /docs/tutorials/add-custom-quote-for-subscriber.html
+        - title: Retrieve all quotes for a subscriber
+          url: /docs/tutorials/all-quotes-for-subscriber.html
     - title: Modify subscriber settings
       url: /docs/tutorials/modify-subscriber-settings.html
       items:

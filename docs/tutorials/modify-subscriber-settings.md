@@ -5,7 +5,7 @@ title: Modify subscriber settings
 
 # Modify subscriber settings
 
-Placeholder page for tutorials about modifying subscriber settings.
+Use these tutorials to practice updating subscriber contact details, quote preferences, frequency, and delivery settings with the Quoteable Service API.
 
 - [Update a subscriber's email or mobile number](update-email-mobile.html)
 - [Update a subscriber's quote preferences](update-subscribers-quote-preferences.html)
