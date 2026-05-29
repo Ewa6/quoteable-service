@@ -5,7 +5,7 @@ title: Update a subscriber's quote preferences
 
 # Update a subscriber's quote preferences
 
-This tutorial demonstrates how to update a subscriber's quote preferences using the Quoteable API. This process allows subscribers to change which types of quotes they want to receive.
+This tutorial demonstrates how to update a subscriber's quote preferences using the Quoteable Service API. This process lets subscribers change which types of quotes they want to receive.
 
 <div class="tutorial-duration">
   <div class="icon-container">
@@ -21,32 +21,33 @@ This tutorial demonstrates how to update a subscriber's quote preferences using 
 
 - You can update any combination of quote preferences (health, love, helping others) in a single request.
 - If you only want to update one preference, only include that field in your request body.
-- The API will return the entire updated subscriber object, including fields you didn't modify.
-- At least one quote preference should be set to true to ensure the subscriber receives quotes.
+- The API returns the entire updated subscriber object, including fields you didn't modify.
+- In this mock API, JSON Server stores the preference values that you send. Add preference validation in your own application if you need it.
 
 ## Prerequisites
 
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have access to the Quoteable Service API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have a tool such as Postman or cURL installed to make API requests.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Know the <code>id</code> of the subscriber whose preferences you want to update.</li>
 </ul>
 
 ## Update subscriber's quote preferences
 
-To update a subscriber's quote preferences, you need to send a `PATCH` request to the `/subscribers/{id}` endpoint with the updated preference information.
+To update a subscriber's quote preferences, send a `PATCH` request to the `/subscribers/{id}` endpoint with the updated preference information.
+
+For endpoint details, see [Update a subscriber](../api/subscribers-patch-subscriber.html).
 
 Follow these steps:
 
-1. Open your API testing tool (e.g., Postman).
+1. Open your API testing tool, such as Postman.
 2. Create a new request with the following details:
     - METHOD: PATCH
-    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriberId)
+    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriber ID)
     - Headers:
         - Content-Type: application/json
-        - Add any required authentication headers (if applicable).
     - Request:
 
 ```shell
@@ -61,7 +62,7 @@ curl --request PATCH "http://localhost:3000/subscribers/{id}" \
 
 Send the request.
 
-The successful request should return a status code `200 OK` with the updated subscriber object in the response body.
+A successful request returns a `200 OK` status code with the updated subscriber object in the response body.
 
 ## Example
 
@@ -98,14 +99,13 @@ Response body:
 
 If you encounter errors, here are some common issues and their solutions:
 
-- `404 Not Found`: Check that you're using the correct subscriber id.
-- `400 Bad Request`: Ensure your JSON is correctly formatted and contains valid boolean values.
-- `401 Unauthorized`: Verify that you're including the correct authentication headers.
+- `404 Not Found`: Check that you're using the correct subscriber ID.
+- `400 Bad Request`: Make sure your JSON is correctly formatted and contains valid boolean values.
 
 ## What's next?
 
 Now that you've learned how to update a subscriber's quote preferences, you can:
 
-- Update other subscriber details like delivery method or frequency.
+- Update other subscriber details, such as delivery method or frequency.
 - Retrieve the updated subscriber information to confirm changes.
 - Use this method to build a preference management feature in your application.

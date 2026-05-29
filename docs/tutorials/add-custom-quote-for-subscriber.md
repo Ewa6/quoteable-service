@@ -5,7 +5,7 @@ title: Add a custom quote for a subscriber
 
 # Add a custom quote for a subscriber
 
-This tutorial demonstrates how to add a custom quote for a subscriber using the Quoteable API. This process allows subscribers to include their own personalized quotes in their quote rotation.
+This tutorial demonstrates how to add a custom quote for a subscriber using the Quoteable Service API. This process lets subscribers include their own personalized quotes in their quote rotation.
 
 <div class="tutorial-duration">
   <div class="icon-container">
@@ -20,7 +20,7 @@ This tutorial demonstrates how to add a custom quote for a subscriber using the 
 ## Important notes
 
 - Adding a custom quote involves setting the `customQuote` field to `true` and providing the quote text in the `customQuoteText` field.
-- Custom quotes are subject to review before we add them to the subscriber's rotation.
+- In this mock API, custom quotes are added directly to the quote record. Add review or moderation in your own application if you need it.
 - Adding a custom quote doesn't affect the subscriber's other quote preferences or delivery settings.
 
 ## Prerequisites
@@ -28,8 +28,8 @@ This tutorial demonstrates how to add a custom quote for a subscriber using the 
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have access to the Quoteable Service API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have a tool such as Postman or cURL installed to make API requests.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Know the <code>id</code> of the subscriber for whom you want to add a custom quote.</li>
 </ul>
 
@@ -37,15 +37,16 @@ Before you start this tutorial:
 
 To add a custom quote for a subscriber, send a `PATCH` request to the `/quotes/{id}` endpoint with `customQuote` set to `true` and `customQuoteText` containing the quote.
 
+For endpoint details, see [Update a quote](../api/quotes-patch-quote.html).
+
 Follow these steps:
 
-1. Open your API testing tool (e.g., Postman).
+1. Open your API testing tool, such as Postman.
 2. Create a new request with the following details:
     - METHOD: PATCH
     - URL: `http://localhost:3000/quotes/{id}` (replace `{id}` with the quote ID you want to update)
     - Headers:
         - Content-Type: application/json
-        - Add any required authentication headers (if applicable).
     - Request:
 
 ```shell
@@ -59,7 +60,7 @@ curl --request PATCH "http://localhost:3000/quotes/{id}" \
 
 Send the request.
 
-The successful request should return a status code `200 OK` with the updated quote object in the response body.
+A successful request returns a `200 OK` status code with the updated quote object in the response body.
 
 ## Example
 
@@ -95,9 +96,7 @@ Response body:
 If you encounter errors, here are some common issues and their solutions:
 
 - `404 Not Found`: Check that you're using the correct quote ID.
-- `400 Bad Request`: Ensure your JSON is correctly formatted and includes both `customQuote` and `customQuoteText` fields.
-- `401 Unauthorized`: Verify that you're including the correct authentication headers.
-- `422 Unprocessable Entity`: This may occur if the custom quote text is empty or exceeds the maximum allowed length. Ensure the quote text is not empty and within the allowed character limit.
+- `400 Bad Request`: Make sure your JSON is correctly formatted and includes both `customQuote` and `customQuoteText` fields.
 
 ## What's next?
 

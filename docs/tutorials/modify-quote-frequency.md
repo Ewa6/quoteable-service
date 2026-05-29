@@ -5,7 +5,7 @@ title: Modify a subscriber's quote frequency
 
 # Modify a subscriber's quote frequency
 
-This tutorial demonstrates how to update a subscriber's quote frequency using the Quoteable API. This process allows subscribers to choose how often they want to receive quotes.
+This tutorial demonstrates how to update a subscriber's quote frequency using the Quoteable Service API. This process lets subscribers choose how often they want to receive quotes.
 
 <div class="tutorial-duration">
   <div class="icon-container">
@@ -20,17 +20,17 @@ This tutorial demonstrates how to update a subscriber's quote frequency using th
 ## Important notes
 
 - The quote frequency is represented by the `frequency` field in the subscriber object.
-- `frequency` value of `1` represents daily delivery, `2` represents weekly delivery, and `3` represents monthly delivery.
+- A `frequency` value of `1` represents daily delivery, `2` represents weekly delivery, and `3` represents monthly delivery.
 - Changing the frequency doesn't affect the subscriber's quote preferences or delivery method.
-- Ensure the frequency value is within the valid range (1-3).
+- In this mock API, JSON Server stores the frequency value that you send. Add range validation in your own application if you need it.
 
 ## Prerequisites
 
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have access to the Quoteable Service API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have a tool such as Postman or cURL installed to make API requests.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Know the <code>id</code> of the subscriber whose quote frequency you want to modify.</li>
 </ul>
 
@@ -38,15 +38,16 @@ Before you start this tutorial:
 
 To modify a subscriber's quote frequency, send a `PATCH` request to the `/subscribers/{id}` endpoint with the updated `frequency` value.
 
+For endpoint details, see [Update a subscriber](../api/subscribers-patch-subscriber.html).
+
 Follow these steps:
 
-1. Open your API testing tool (e.g., Postman).
+1. Open your API testing tool, such as Postman.
 2. Create a new request with the following details:
     - METHOD: PATCH
-    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriberId)
+    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriber ID)
     - Headers:
         - Content-Type: application/json
-        - Add any required authentication headers (if applicable).
     - Request:
 
 ```shell
@@ -59,7 +60,7 @@ curl --request PATCH "http://localhost:3000/subscribers/{id}" \
 
 Send the request.
 
-The successful request should return a status code `200 OK` with the updated subscriber object in the response body.
+A successful request returns a `200 OK` status code with the updated subscriber object in the response body.
 
 ## Example
 
@@ -94,16 +95,14 @@ Response body:
 
 If you encounter errors, here are some common issues and their solutions:
 
-- `404 Not Found`: Check that you're using the correct subscriber id.
-- `400 Bad Request`: Ensure your JSON is correctly formatted and the frequency value is `1`, `2`, or `3`.
-- `401 Unauthorized`: Verify that you're including the correct authentication headers.
-- `422 Unprocessable Entity`: This may occur if the frequency value is outside the valid range. Ensure the frequency is set to `1` (daily), `2` (weekly), or `3` (monthly).
+- `404 Not Found`: Check that you're using the correct subscriber ID.
+- `400 Bad Request`: Make sure your JSON is correctly formatted and the frequency value is `1`, `2`, or `3`.
 
 ## What's next?
 
 Now that you've learned how to modify a subscriber's quote frequency, you can:
 
-- Update other subscriber details like quote preferences or delivery method.
+- Update other subscriber details, such as quote preferences or delivery method.
 - Retrieve the updated subscriber information to confirm changes.
 - Implement a feature in your application allowing users to choose their preferred quote frequency.
-- Consider adding a feature to your application that suggests changing the frequency based on user engagement (e.g., suggesting less frequent quotes if the user isn't opening daily emails).
+- Consider adding a feature to your application that suggests changing the frequency based on user engagement. For example, it can suggest less frequent quotes if the user isn't opening daily emails.

@@ -5,7 +5,7 @@ title: Make your first request
 
 # Make your first request
 
-Welcome to the Quoteable Service! This guide will walk you through the basic steps to get started with using our API to manage subscribers and their favorite quotes.
+Welcome to Quoteable Service. This guide walks you through the basic steps to get started with the API to manage subscribers and their favorite quotes.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ To prepare your operating system, follow these instructions:
 ## Step 1: Fork the Quoteable Service repository
 
 1. Visit the Quoteable Service GitHub repository: <https://github.com/Ewa6/quoteable-service>
-2. Click **Fork** and select **Create a new fork**. This creates the fork of the Quoteable Service repository on your GitHub.
+2. Select **Fork**, and then select **Create a new fork**. This creates a fork of the Quoteable Service repository in your GitHub account.
 
 ## Step 2: Clone the Quoteable Service repository
 
@@ -29,13 +29,13 @@ Once you have forked the repository, you can clone it and work with it. To do so
 2. Sign in to your GitHub account.
 3. In the upper left corner, select **File** > **Clone Repository**.
 4. In the **Clone Repository** dialog, go to the **GitHub.com** tab and select the **quoteable-service** repository.
-5. Click **Clone**. Once the GitHub Desktop clones the repository, you can find it in the specified local directory.
+5. Select **Clone**. After GitHub Desktop clones the repository, you can find it in the specified local directory.
 
 ## Step 3: Install project dependencies
 
-Install the project dependencies before you start the JSON server. The project uses a local JSON Server dependency, so you do not need to install JSON Server globally.
+Install the project dependencies before you start JSON Server. The project uses a local JSON Server dependency, so you do not need to install JSON Server globally.
 
-1. Open a command prompt (cmd) on Windows or a terminal on your Mac.
+1. On Windows, open Command Prompt. On macOS, open Terminal.
 2. Navigate to the directory where you cloned the Quoteable Service repository. For example: `cd C:\path\to\your\directory`
 3. Run the following command:
 
@@ -43,13 +43,13 @@ Install the project dependencies before you start the JSON server. The project u
 npm install
 ```
 
-## Step 4: Start the JSON server
+## Step 4: Start JSON Server
 
-To start the JSON server in the directory of your cloned repository, follow these steps:
+To start JSON Server in the directory of your cloned repository, follow these steps:
 
 1. Open a command prompt (cmd) on Windows or a terminal on your Mac.
 2. Navigate to the directory where you cloned the Quoteable Service repository. For example: `cd C:\path\to\your\directory`
-3. Start the JSON server:
+3. Start JSON Server:
 
 ```shell
 npm run start:api
@@ -69,15 +69,15 @@ macOS:
 sh start-server.sh
 ```
 
-The JSON server runs at `http://localhost:3000`. You can test it by running this address in your web browser.
+JSON Server runs at `http://localhost:3000`. You can test it by opening this address in your web browser.
 
 ## Step 5: Make your first API call in Postman
 
-Now it's time to make your first API call to the Quoteable Service! To do so, follow these steps:
+To make your first API call to Quoteable Service, follow these steps:
 
 1. Open Postman.
 2. Select the `GET` method and enter the address: `http://localhost:3000/subscribers`.
-3. Click **Send**. The status of the response should be `200 OK` and the response body should return all subscribers of the Quoteable Service.
+3. Select **Send**. The response status is `200 OK`, and the response body returns all Quoteable Service subscribers.
 
 ```shell
 curl "http://localhost:3000/subscribers"

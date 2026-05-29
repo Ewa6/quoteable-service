@@ -9,7 +9,7 @@ The API has two resources:
 
 ## Get started
 
-Follow instructions in these chapters to prepare your environment and get started:
+Follow the instructions in these topics to prepare your environment and get started:
 
 * [Prepare your Windows device]({{ site.baseurl }}/docs/tutorials/prepare-windows.html)
 * [Prepare your Mac device]({{ site.baseurl }}/docs/tutorials/prepare-mac.html)
@@ -34,6 +34,7 @@ The following table lists endpoints for the `subscribers` resource.
 | <span class="method method--get">GET</span> | `/subscribers` | Retrieve all subscribers. |
 | <span class="method method--get">GET</span> | `/subscribers/{id}` | Retrieve one subscriber by ID. |
 | <span class="method method--post">POST</span> | `/subscribers` | Create a subscriber. |
+| <span class="method method--patch">PATCH</span> | `/subscribers/{id}` | Update part of a subscriber. |
 | <span class="method method--put">PUT</span> | `/subscribers/{id}` | Replace a subscriber. |
 | <span class="method method--delete">DELETE</span> | `/subscribers/{id}` | Delete a subscriber. |
 
@@ -48,6 +49,7 @@ The following table lists endpoints for the `quotes` resource.
 | <span class="method method--get">GET</span> | `/quotes` | Retrieve all quotes. |
 | <span class="method method--get">GET</span> | `/quotes/{id}` | Retrieve one quote by ID. |
 | <span class="method method--post">POST</span> | `/quotes` | Create a quote. |
+| <span class="method method--patch">PATCH</span> | `/quotes/{id}` | Update part of a quote. |
 | <span class="method method--put">PUT</span> | `/quotes/{id}` | Replace a quote. |
 | <span class="method method--delete">DELETE</span> | `/quotes/{id}` | Delete a quote. |
 
@@ -64,7 +66,7 @@ Follow these tutorials to practice common API tasks:
 * [Update a subscriber's email or mobile number]({{ site.baseurl }}/docs/tutorials/update-email-mobile.html)
 * [Update a subscriber's quote preferences]({{ site.baseurl }}/docs/tutorials/update-subscribers-quote-preferences.html)
 * [Modify a subscriber's quote frequency]({{ site.baseurl }}/docs/tutorials/modify-quote-frequency.html)
-* [Change a subscriber's delivery method]({{ site.baseurl }}/docs/tutorials/change-delivery-method.html)
+* [Change a subscriber's quote delivery method]({{ site.baseurl }}/docs/tutorials/change-delivery-method.html)
 * [Retrieve all quotes for a subscriber]({{ site.baseurl }}/docs/tutorials/all-quotes-for-subscriber.html)
 * [Implement basic error handling]({{ site.baseurl }}/docs/tutorials/implement-error-handling.html)
 

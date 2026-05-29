@@ -3,9 +3,9 @@ layout: default
 title: Update a subscriber's email or mobile number
 ---
 
-# Update a subscriber's email or mobile
+# Update a subscriber's email or mobile number
 
-This tutorial demonstrates how to update a subscriber's email address or mobile number using the Quoteable API. This process is useful when subscribers need to change their contact information.
+This tutorial demonstrates how to update a subscriber's email address or mobile number using the Quoteable Service API. This process is useful when subscribers need to change their contact information.
 
 <div class="tutorial-duration">
   <div class="icon-container">
@@ -21,32 +21,33 @@ This tutorial demonstrates how to update a subscriber's email address or mobile 
 
 - You can update either the email, mobile, or both in a single request.
 - If you only want to update one field, only include that field in your request body.
-- The API will return the entire updated subscriber object, including fields you didn't modify.
-- Ensure that the new email address is valid and the new mobile number is in the correct format.
+- The API returns the entire updated subscriber object, including fields you didn't modify.
+- Make sure the new email address is valid and the new mobile number is in the correct format.
 
 ## Prerequisites
 
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have a tool like Postman or cURL installed to make API requests.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have access to the Quoteable Service API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have a tool such as Postman or cURL installed to make API requests.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Know the <code>id</code> of the subscriber you want to update.</li>
 </ul>
 
 ## Update subscriber information
 
-To update a subscriber's email or mobile number, you need to send a `PATCH` request to the `/subscribers/{id}` endpoint with the updated information.
+To update a subscriber's email or mobile number, send a `PATCH` request to the `/subscribers/{id}` endpoint with the updated information.
+
+For endpoint details, see [Update a subscriber](../api/subscribers-patch-subscriber.html).
 
 Follow these steps:
 
-1. Open your API testing tool (e.g., Postman).
+1. Open your API testing tool, such as Postman.
 2. Create a new request with the following details:
     - METHOD: PATCH
-    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriberId)
+    - URL: `http://localhost:3000/subscribers/{id}` (replace `{id}` with the actual subscriber ID)
     - Headers:
         - Content-Type: application/json
-        - Add any required authentication headers (if applicable).
     - Request:
 
 ```shell
@@ -60,7 +61,7 @@ curl --request PATCH "http://localhost:3000/subscribers/{id}" \
 
 Send the request.
 
-The successful request should return a status code `200 OK` with the updated subscriber object in the response body.
+A successful request returns a `200 OK` status code with the updated subscriber object in the response body.
 
 ## Example
 
@@ -92,18 +93,17 @@ Response body:
 }
 ```
 
-## Error Handling
+## Error handling
 
 If you encounter errors, here are some common issues and their solutions:
 
-- `404 Not Found`: Check that you're using the correct subscriber id.
-- `400 Bad Request`: Ensure your JSON is correctly formatted and contains valid data.
-- `401 Unauthorized`: Verify that you're including the correct authentication headers.
+- `404 Not Found`: Check that you're using the correct subscriber ID.
+- `400 Bad Request`: Make sure your JSON is correctly formatted.
 
-## What's Next?
+## What's next?
 
 Now that you've learned how to update a subscriber's contact information, you can:
 
-- Update other subscriber details like name or quote preferences.
+- Update other subscriber details, such as name or quote preferences.
 - Retrieve the updated subscriber information to confirm changes.
 - Use this method to build a user profile update feature in your application.

@@ -5,7 +5,7 @@ title: Implement basic error handling when using the API
 
 # Implement basic error handling when using the API
 
-This tutorial demonstrates how to implement basic error handling when working with the Quoteable API. Proper error handling is crucial for creating robust applications that can gracefully manage unexpected situations.
+This tutorial demonstrates how to implement basic error handling when working with the Quoteable Service API. Proper error handling is important for creating robust applications that can gracefully manage unexpected situations.
 
 <div class="tutorial-duration">
   <div class="icon-container">
@@ -19,7 +19,7 @@ This tutorial demonstrates how to implement basic error handling when working wi
 
 ## Important notes
 
-- The Quoteable API uses standard HTTP status codes to indicate the success or failure of an API request.
+- The Quoteable Service API uses standard HTTP status codes to indicate the success or failure of an API request.
 - Implementing proper error handling improves the user experience and makes debugging easier.
 
 ## Prerequisites
@@ -27,14 +27,14 @@ This tutorial demonstrates how to implement basic error handling when working wi
 Before you start this tutorial:
 
 <ul class="checkbox-list" style="list-style-type: none;">
-  <li style="list-style-type: none;"><input type="checkbox"> Ensure you have access to the Quoteable API.</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Make sure you have access to the Quoteable Service API.</li>
   <li style="list-style-type: none;"><input type="checkbox"> Have a basic understanding of HTTP status codes.</li>
-  <li style="list-style-type: none;"><input type="checkbox"> Be familiar with making API requests using a programming language of your choice (we'll use JavaScript in our examples).</li>
+  <li style="list-style-type: none;"><input type="checkbox"> Be familiar with making API requests using a programming language of your choice. This tutorial uses JavaScript in its examples.</li>
 </ul>
 
 ## Implementing basic error handling
 
-Here's a step-by-step guide to implement basic error handling when using the Quoteable API:
+Use these steps to implement basic error handling when using the Quoteable Service API:
 
 1. Make the API request.
 2. Check the HTTP status code of the response.
@@ -44,7 +44,7 @@ Here's a step-by-step guide to implement basic error handling when using the Quo
    - Log the error for debugging purposes.
    - Provide appropriate feedback to the user.
 
-Here's a basic example using JavaScript and the Fetch API:
+The following basic example uses JavaScript and the Fetch API:
 
 ```javascript
 const BASE_URL = 'http://localhost:3000';
@@ -74,7 +74,7 @@ async function makeApiRequest(endpoint, method = 'GET', body = null) {
     return data;
   } catch (error) {
     console.error('Error making API request:', error);
-    // Handle the error appropriately (e.g., show an error message to the user)
+    // Handle the error appropriately, for example, show an error message to the user.
     throw error;
   }
 }
@@ -104,10 +104,8 @@ loadSubscriber();
 
 | Error | Cause | Handling |
 | ----- | ----- | -------- |
-| 400 Bad Request | Invalid input data. | Check the error message for details about what is wrong with the input. Validate user input before sending requests. |
-| 401 Unauthorized | Invalid or missing authentication credentials. | Check whether the user is logged in. If the user is not logged in, prompt them to log in. If the user is logged in, the access token might be expired. Try refreshing it. |
-| 404 Not Found | The requested resource does not exist. | Check whether the ID or endpoint is correct. If the resource should exist, it might have been deleted. Update your local data. |
-| 422 Unprocessable Entity | The request is well formed but contains semantic errors. | Check the error message for details and adjust your request. This error is often related to business logic. |
+| 400 Bad Request | Invalid JSON request body. | Check that the request body is valid JSON before sending it again. |
+| 404 Not Found | The requested resource does not exist. | Check whether the ID or endpoint is correct. If you expect the resource to exist, it might have been deleted. Update your local data. |
 | 500 Internal Server Error | Something went wrong on the server. | Log the error and retry the request after a short delay. If the error persists, contact API support. |
 
 ## Best practices
@@ -115,8 +113,8 @@ loadSubscriber();
 - Always check the HTTP status code before processing the response.
 - Log errors for debugging, but be careful not to log sensitive information.
 - Provide user-friendly error messages to your users.
-- Implement retry logic for transient errors (like network issues or 500 errors).
-- Use a centralized error handling mechanism in your application for consistency.
+- Implement retry logic for transient errors, such as network issues or 500 errors.
+- Use a centralized error-handling mechanism in your application for consistency.
 
 ## What's next?
 

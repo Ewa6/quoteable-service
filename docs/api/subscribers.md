@@ -50,5 +50,6 @@ Use the `subscribers` resource to manage people who receive quotes from the Quot
 | <span class="method method--get">GET</span> | `/subscribers` | [Retrieve all subscribers](subscribers-get-all-subscribers.html). |
 | <span class="method method--get">GET</span> | `/subscribers/{id}` | [Retrieve one subscriber by ID](subscribers-get-subscriber-by-id.html). |
 | <span class="method method--post">POST</span> | `/subscribers` | [Create a subscriber](subscribers-add-subscriber.html). |
+| <span class="method method--patch">PATCH</span> | `/subscribers/{id}` | [Update a subscriber](subscribers-patch-subscriber.html). |
 | <span class="method method--put">PUT</span> | `/subscribers/{id}` | [Replace a subscriber](subscribers-update-subscriber.html). |
 | <span class="method method--delete">DELETE</span> | `/subscribers/{id}` | [Delete a subscriber](subscribers-delete-subscriber.html). |
